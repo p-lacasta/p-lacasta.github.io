@@ -1,0 +1,55 @@
+:root {
+    /*Colors*/
+    --color-bg: #faf9f7;
+    --color-surface: #ffffff;
+    --color-text: #2b2b2b;
+    --color-text-soft:#6f6a63;
+    --color-accent: #a08265;
+    --color-accent-dark:#7d6047;
+
+    /* Type scale */
+    --font-body: "Poppins",sans-serif;
+    --text-base: 1rem;
+    --text-lg: 1.25rem;
+    --text-xl: 2rem;
+    --text-hero: 3rem;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--color-text);
+    background: var(--color-bg);
+}
+
+h1{
+    font-size:var(--text-hero);
+    color:var(--color-accent-dark);
+}
+
+h2{
+    font-size: var(--text-xl);
+    color:var(--color-accent-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+h3{
+    font-size: var(--text-lg);
+}
+
+.project-year, .project-tools {
+    color: var(--color-text-soft);
+    font-size: 0.875rem;
+}
+
+.project-card p{color:purple;}
+p{color:green;}
+p{color:blue;}
