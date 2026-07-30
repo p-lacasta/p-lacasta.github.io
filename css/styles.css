@@ -109,3 +109,33 @@ section {
     transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
+
+header{
+    position:sticky;
+    top:0;
+    background: var(--color-accent);
+    z-index:10;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+header a{
+    color: var(--color-text);
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    font-weight:bold;
+    line-height: 1.6;
+}
+
+header a:hover{
+    color: var(--color-text-soft);
+}
