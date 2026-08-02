@@ -82,6 +82,26 @@ p{
     max-width: 65ch;
 }
 
+.reveal{
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition-delay: calc(var(--reveal-index, 0) * 80ms);
+}
+
+.reveal.is-visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce){
+    .reveal{
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
 .about-layout{
     display: flex;
     align-items: flex-start;
@@ -235,6 +255,49 @@ section + section{
     max-width: 560px;
 }
 
+@keyframes hero-fade-up{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-avatar,
+#hero h1,
+.hero-content p,
+#hero a{
+    animation: hero-fade-up 0.8s ease-out both;
+}
+
+.hero-avatar{
+    animation-delay: 0s;
+}
+
+#hero h1{
+    animation-delay: 0.15s;
+}
+
+.hero-content p{
+    animation-delay: 0.3s;
+}
+
+#hero a{
+    animation-delay: 0.45s;
+}
+
+@media (prefers-reduced-motion: reduce){
+    .hero-avatar,
+    #hero h1,
+    .hero-content p,
+    #hero a{
+        animation: none;
+    }
+}
+
 .hero-avatar{
     width: 84px;
     height: 84px;
@@ -287,7 +350,7 @@ section + section{
     display:flex;
     flex-direction:column;
     gap: 0.5rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, translate 0.2s ease, box-shadow 0.2s ease;
 }
 
 .project-card img {
@@ -298,7 +361,7 @@ section + section{
 }
 
 .project-card:hover {
-    transform: translateY(-4px);
+    translate: 0 -4px;
     box-shadow: var(--shadow-md);
 }
 
@@ -405,7 +468,7 @@ header nav a.active::after{
     display:flex;
     flex-direction:column;
     gap: 0.5rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, translate 0.2s ease, box-shadow 0.2s ease;
     border-left: 4px solid var(--color-accent);
 }
 
@@ -437,7 +500,7 @@ header nav a.active::after{
 }
 
 .competition-card:hover {
-    transform: translateY(-4px);
+    translate: 0 -4px;
     box-shadow: var(--shadow-md);
 }
 

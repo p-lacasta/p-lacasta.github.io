@@ -147,3 +147,32 @@ if (navToggle && nav) {
         }
     });
 }
+
+/* Scroll-in reveal animations */
+const revealEls = document.querySelectorAll(".reveal");
+
+if (revealEls.length > 0) {
+    const revealCounters = new Map();
+
+    revealEls.forEach((el) => {
+        const parent = el.parentElement;
+        const index = revealCounters.get(parent) || 0;
+        el.style.setProperty("--reveal-index", index);
+        revealCounters.set(parent, index + 1);
+    });
+
+    if ("IntersectionObserver" in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: "0px 0px -60px 0px" });
+
+        revealEls.forEach((el) => revealObserver.observe(el));
+    } else {
+        revealEls.forEach((el) => el.classList.add("is-visible"));
+    }
+}
