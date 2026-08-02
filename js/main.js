@@ -115,12 +115,14 @@ if (navToggle && nav) {
         nav.classList.remove("open");
         navToggle.setAttribute("aria-expanded", "false");
         navToggle.setAttribute("aria-label", "Open menu");
+        header?.classList.remove("menu-open");
     };
 
     const openMenu = () => {
         nav.classList.add("open");
         navToggle.setAttribute("aria-expanded", "true");
         navToggle.setAttribute("aria-label", "Close menu");
+        header?.classList.add("menu-open");
     };
 
     navToggle.addEventListener("click", () => {
@@ -146,6 +148,12 @@ if (navToggle && nav) {
             navToggle.focus();
         }
     });
+
+    window.addEventListener("scroll", () => {
+        if (nav.classList.contains("open")) {
+            closeMenu();
+        }
+    }, { passive: true });
 }
 
 /* Scroll-in reveal animations */
