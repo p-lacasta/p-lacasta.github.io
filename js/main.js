@@ -105,3 +105,45 @@ const setActiveLink = () => {
 setActiveLink();
 window.addEventListener("scroll", setActiveLink, { passive: true });
 window.addEventListener("resize", setActiveLink);
+
+/* Hamburger menu */
+const navToggle = document.querySelector("#nav-toggle");
+const nav = document.querySelector("nav");
+
+if (navToggle && nav) {
+    const closeMenu = () => {
+        nav.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.setAttribute("aria-label", "Open menu");
+    };
+
+    const openMenu = () => {
+        nav.classList.add("open");
+        navToggle.setAttribute("aria-expanded", "true");
+        navToggle.setAttribute("aria-label", "Close menu");
+    };
+
+    navToggle.addEventListener("click", () => {
+        if (nav.classList.contains("open")) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+
+    navLinks.forEach((link) => link.addEventListener("click", closeMenu));
+
+    document.addEventListener("click", (event) => {
+        const isClickInside = nav.contains(event.target) || navToggle.contains(event.target);
+        if (!isClickInside && nav.classList.contains("open")) {
+            closeMenu();
+        }
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && nav.classList.contains("open")) {
+            closeMenu();
+            navToggle.focus();
+        }
+    });
+}
