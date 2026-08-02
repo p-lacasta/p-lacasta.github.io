@@ -192,7 +192,7 @@ section + section{
     min-height: 100vh;
     min-height: 100svh;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     color: #ffffff;
     overflow: hidden;
 }
@@ -213,7 +213,13 @@ section + section{
 .hero-overlay{
     position: absolute;
     inset: 0;
-    background: linear-gradient(120deg, rgba(20,16,12,0.75) 0%, rgba(20,16,12,0.35) 60%, rgba(20,16,12,0.15) 100%);
+    background: linear-gradient(105deg,
+        rgba(10,8,6,0.97) 0%,
+        rgba(10,8,6,0.93) 34%,
+        rgba(10,8,6,0.6) 48%,
+        rgba(10,8,6,0.15) 62%,
+        rgba(10,8,6,0) 72%
+    );
 }
 
 .hero-inner{
@@ -222,28 +228,21 @@ section + section{
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 2rem 4rem;
-}
-
-.hero-panel{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    width: 100%;
-    background: rgba(20,16,12,0.5);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.14);
-    border-radius: var(--radius-md);
-    padding: 2.25rem;
-    box-shadow: var(--shadow-md);
+    padding: 0 2rem;
 }
 
 .hero-content{
-    flex: 1 1 auto;
-    min-width: 0;
-    max-width: 700px;
+    max-width: 560px;
+}
+
+.hero-avatar{
+    width: 84px;
+    height: 84px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgba(255,255,255,0.85);
+    box-shadow: var(--shadow-md);
+    margin-bottom: 1.5rem;
 }
 
 #hero h1{
@@ -252,18 +251,8 @@ section + section{
 }
 
 .hero-content p{
-    color: rgba(255,255,255,0.88);
+    color: rgba(255,255,255,0.85);
     margin-bottom: 1.75rem;
-}
-
-.hero-avatar{
-    width: 220px;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid rgba(255,255,255,0.85);
-    box-shadow: var(--shadow-md);
-    flex-shrink: 0;
 }
 
 #hero a{
@@ -694,28 +683,31 @@ header.scrolled .nav-toggle-bar{
     }
 }
 
-@media (max-width: 640px){
-    h1{
-        font-size: 2.25rem;
+/* Below ~900px there isn't enough room for the text column to clear the
+   diagonal overlay's fade zone before it hits the brighter part of the
+   photo, so the split-hero effect gives way to a plain dark scrim. */
+@media (max-width: 900px){
+    #hero{
+        align-items: flex-end;
     }
 
-    #hero{
-        min-height: 100vh;
-        min-height: 100svh;
+    .hero-bg-layer{
         background-position: center;
     }
 
-    .hero-inner{
-        padding: 3rem 1.5rem;
-        display: flex;
-        justify-content: center;
+    .hero-overlay{
+        background: linear-gradient(180deg,
+            rgba(8,6,5,0) 0%,
+            rgba(8,6,5,0.25) 35%,
+            rgba(8,6,5,0.75) 55%,
+            rgba(8,6,5,0.94) 72%,
+            rgba(8,6,5,0.96) 100%
+        );
     }
 
-    .hero-panel{
-        flex-direction: column;
+    .hero-inner{
+        padding: 3rem 1.5rem 3.5rem;
         text-align: center;
-        padding: 2rem;
-        gap: 1.25rem;
     }
 
     .hero-content{
@@ -723,8 +715,14 @@ header.scrolled .nav-toggle-bar{
     }
 
     .hero-avatar{
-        width: 160px;
-        height: 160px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 640px){
+    h1{
+        font-size: 2.25rem;
     }
 
     .footer-inner{
