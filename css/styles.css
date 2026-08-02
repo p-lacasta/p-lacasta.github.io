@@ -193,11 +193,21 @@ section + section{
     min-height: 100svh;
     display: flex;
     align-items: flex-end;
-    background-image: url("../images/FSS25_hero.jpg");
-    background-size: cover;
-    background-position: center 30%;
     color: #ffffff;
     overflow: hidden;
+}
+
+.hero-bg-layer{
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center 30%;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
+
+.hero-bg-layer.is-active{
+    opacity: 1;
 }
 
 .hero-overlay{
@@ -308,8 +318,15 @@ header{
     top:0;
     left: 0;
     right: 0;
-    background: var(--color-surface);
+    background: transparent;
     z-index:10;
+    border-bottom: 1px solid transparent;
+    box-shadow: none;
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header.scrolled{
+    background: var(--color-surface);
     border-bottom: 1px solid var(--color-border);
     box-shadow: 0 1px 2px rgba(0,0,0,0.04);
 }
@@ -327,9 +344,14 @@ header{
 .logo{
     font-weight: 700;
     font-size: 1.1rem;
-    color: var(--color-accent-dark);
+    color: #ffffff;
     text-decoration: none;
     letter-spacing: 0.02em;
+    transition: color 0.3s ease;
+}
+
+header.scrolled .logo{
+    color: var(--color-accent-dark);
 }
 
 nav{
@@ -340,7 +362,7 @@ nav{
 }
 
 header nav a{
-    color: var(--color-text);
+    color: #ffffff;
     text-decoration: none;
     font-family: var(--font-body);
     font-size: 0.95rem;
@@ -348,6 +370,11 @@ header nav a{
     line-height: 1.6;
     position: relative;
     padding: 0.25rem 0;
+    transition: color 0.3s ease;
+}
+
+header.scrolled nav a{
+    color: var(--color-text);
 }
 
 header nav a::after{
@@ -362,7 +389,7 @@ header nav a::after{
 }
 
 header nav a:hover{
-    color: var(--color-accent-dark);
+    color: var(--color-accent);
 }
 
 header nav a:hover::after{
@@ -370,6 +397,10 @@ header nav a:hover::after{
 }
 
 header nav a.active{
+    color: #ffffff;
+}
+
+header.scrolled nav a.active{
     color: var(--color-accent-dark);
 }
 
