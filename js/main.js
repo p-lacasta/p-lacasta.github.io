@@ -29,11 +29,9 @@ const heroImages = [
     "images/hero/FSS25_hero.jpg",
     "images/hero/FSPT25_hero.jpeg",
     "images/hero/20250719_142926000_iOS%203.jpg",
-    "images/hero/20250801_175856876_iOS.jpg",
-    "images/hero/20250801_181540642_iOS.jpg",
     "images/hero/20250812_192207000_iOS.jpg",
     "images/hero/20250814_150203000_iOS.jpg",
-    "images/hero/SolarPlane.jpg"
+    "images/hero/WhatsApp%20Image%202026-08-09%20at%2019.28.55.jpeg"
 ];
 
 const heroBgLayers = document.querySelectorAll(".hero-bg-layer");

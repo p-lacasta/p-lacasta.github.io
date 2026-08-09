@@ -182,12 +182,13 @@ p{
 
 .project-tools{
     display: inline-block;
+    align-self: flex-start;
     background: rgba(160,130,101,0.12);
     color: var(--color-accent-dark);
     font-weight: 600;
     padding: 0.25rem 0.75rem;
     border-radius: 999px;
-    margin-top: 0.25rem;
+    margin-top: auto;
 }
 
 section, footer {
@@ -500,12 +501,15 @@ header nav a.active::after{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    height: 2.75rem;
 }
 
 .competition-card img.competition-logo {
-    width: 6rem;
-    height: auto;
+    width: auto;
+    max-width: 6rem;
+    height: 100%;
     object-fit: contain;
+    object-position: left center;
     border-radius: 0;
 }
 
@@ -518,6 +522,29 @@ header nav a.active::after{
 .competition-card:hover {
     translate: 0 -4px;
     box-shadow: var(--shadow-md);
+}
+
+.presentation-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.presentation-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--color-text-soft);
+    font-size: 0.9rem;
+}
+
+.presentation-list svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    color: var(--color-accent);
 }
 
 footer{
