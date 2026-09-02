@@ -916,6 +916,51 @@ header.scrolled .nav-toggle-bar{
     max-width: none;
 }
 
+.project-detail-features{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    margin-bottom: 3rem;
+}
+
+.project-detail-features li{
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+}
+
+.feature-icon{
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    padding: 9px;
+    box-sizing: border-box;
+    color: var(--color-accent);
+    background: rgba(160,130,101,0.12);
+    border-radius: 50%;
+}
+
+.project-detail-features p{
+    padding-top: 0.4rem;
+    color: var(--color-text-soft);
+}
+
+.project-detail-gallery{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.project-detail-gallery img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
 @media (max-width: 640px){
     .project-detail{
         padding-top: 5rem;
