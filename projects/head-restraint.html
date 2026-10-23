@@ -11,10 +11,16 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Design and manufacturing of a Formula Student head restraint - Pau Lacasta</title>
-  <meta name="description" content="Redesigned and FE-validated the EM-04 head restraint against the 890 N rule load, comparing three variants.">
-
+  <title>Formula Student head restraint: sizing and FEA - Pau Lacasta</title>
+  <meta name="description" content="Resizing and FE-validating the EM-04 head restraint against the FSG 890 N rule load. Three support concepts compared; the selected design reached safety factors of 2.16 at the centre and 1.35 at the edge and passed scrutineering at FS Spain 2024.">
   <link rel="canonical" href="https://p-lacasta.github.io/projects/head-restraint.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://p-lacasta.github.io/projects/head-restraint.html">
+  <meta property="og:title" content="Formula Student head restraint: sizing and FEA - Pau Lacasta">
+  <meta property="og:description" content="Resizing and FE-validating the EM-04 head restraint against the FSG 890 N rule load. Three support concepts compared; the selected design reached safety factors of 2.16 at the centre and 1.35 at the edge and passed scrutineering at FS Spain 2024.">
+  <meta property="og:image" content="https://p-lacasta.github.io/images/HeadRestraint.webp">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,30 +47,218 @@
   </header>
 
   <main>
-    <article class="project-detail">
+    <article class="project-detail case-study">
       <a href="../index.html#projects" class="back-link">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Back to projects
       </a>
 
       <div class="project-detail-header">
-        <p class="project-year">2024</p>
-        <h1>Design and manufacturing of a Formula Student head restraint</h1>
-        <p class="project-tools">SolidWorks</p>
-      </div>
-
-      <img src="../images/HeadRestraint.webp" width="1200" height="960" alt="Formula Student head restraint render" class="project-detail-image">
-
-      <div class="project-detail-summary">
-        <p>
-          Redesigned and FE-validated the EM-04 head restraint against the 890 N rule load, comparing three variants. The selected design reached safety factors of 2.16 (centre) and 1.35 (edge, worst case) and passed its scrutineering check at FS Spain 2024.
+        <p class="cs-eyebrow">2023–24 · EUSS Motorsport, Frame &amp; Body department · EM-04</p>
+        <h1>Formula Student head restraint: sizing and FEA</h1>
+        <p class="cs-lede">
+          The previous head restraint study did not show that the part met the 890&nbsp;N load required by the rules, and did not check its size against the drivers. I resized it from driver measurements, then compared three support concepts in FEA under a centred and a worst-case edge load. The selected design reached safety factors of 2.16 and 1.35, where the original two-beam concept failed at 0.85 and 0.60. It passed its scrutineering check at Formula Student Spain 2024.
         </p>
+        <ul class="cs-chips" aria-label="Tools">
+          <li>SolidWorks</li>
+          <li>SolidWorks Simulation</li>
+        </ul>
       </div>
 
-      <!-- Add more project details, images, and results here -->
-      <div class="project-detail-placeholder">
-        More details on this project are coming soon.
-      </div>
+      <dl class="cs-meta">
+        <div>
+          <dt>Rule</dt>
+          <dd>FSG 2024 v1.1, T5.7: 890&nbsp;N rearward at any point on the surface</dd>
+        </div>
+        <div>
+          <dt>Material</dt>
+          <dd>S275JR steel plate, Ø12&nbsp;×&nbsp;1&nbsp;mm support tubes welded to the main hoop</dd>
+        </div>
+        <div>
+          <dt>Result</dt>
+          <dd>Safety factor 2.16 (centre load), 1.35 (edge load, worst case)</dd>
+        </div>
+        <div>
+          <dt>Outcome</dt>
+          <dd>Passed its scrutineering check at FS Spain 2024. The car as a whole was held up at the electrical inspections</dd>
+        </div>
+      </dl>
+
+      <img src="../images/HeadRestraint.webp" width="1200" height="960" alt="CAD render of the selected head restraint: a steel plate with lightening holes carried on two support tubes that run underneath it" class="project-detail-image" style="max-height: 420px;">
+
+      <ul class="cs-keyfigs">
+        <li class="cs-keyfig">
+          <strong>890&nbsp;N</strong>
+          <span>Rule load, applied over an 80&nbsp;mm circle at the centre and at the edge</span>
+        </li>
+        <li class="cs-keyfig">
+          <strong>0.60 → 1.35</strong>
+          <span>Worst-case safety factor, original concept to selected design</span>
+        </li>
+        <li class="cs-keyfig">
+          <strong>200 → 240&nbsp;mm</strong>
+          <span>Restraint length, to give the tallest driver a 50&nbsp;mm margin</span>
+        </li>
+        <li class="cs-keyfig">
+          <strong>3 concepts</strong>
+          <span>Two beams, three beams, and two beams running under the plate</span>
+        </li>
+      </ul>
+
+      <nav class="cs-toc" aria-label="On this page">
+        <p>On this page</p>
+        <ol>
+          <li><a href="#requirements">Requirements</a></li>
+          <li><a href="#sizing">Sizing for the drivers</a></li>
+          <li><a href="#concepts">Concepts</a></li>
+          <li><a href="#fea">FEA set-up and results</a></li>
+          <li><a href="#limitations">Limitations and next steps</a></li>
+        </ol>
+      </nav>
+
+      <!-- 01 -->
+      <section id="requirements">
+        <h2><span class="cs-num">01</span>Requirements</h2>
+        <p>
+          A study from December 2022 had proposed a design with simulations and a material list. It did not show compliance with the 890&nbsp;N requirement at every point on the surface, and the size had not been checked against each driver. I set three goals: verify the strength at any point, improve the design if needed, and confirm the dimensions suit every driver.
+        </p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Applicable rules">
+          <table class="cs-table cs-table--wide cs-table--stack">
+            <thead>
+              <tr><th scope="col">FSG 2024 rule</th><th scope="col">Requirement</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>T5.7.1</td><td data-label="Requirement">A head restraint must limit the rearward motion of the driver's head</td></tr>
+              <tr><td>T5.7.2</td><td data-label="Requirement">Vertical or near vertical. At least 150&nbsp;mm wide and high. Padded with at least 40&nbsp;mm of approved energy-absorbing material. No more than 25&nbsp;mm from the back of each driver's helmet, with the helmet contact point at least 50&nbsp;mm from any edge</td></tr>
+              <tr><td>T5.7.3</td><td data-label="Requirement">The restraint and its mounting must withstand 890&nbsp;N applied rearward at any point on its surface</td></tr>
+              <tr><td>Packaging</td><td data-label="Requirement">The restraint must attach to the main hoop</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          The earlier study had also benchmarked eleven teams' head restraints. Its conclusions still held: one fixed restraint for all drivers, sized from the drivers' heights, with the shape left as a free choice.
+        </p>
+      </section>
+
+      <!-- 02 -->
+      <section id="sizing">
+        <h2><span class="cs-num">02</span>Sizing for the drivers</h2>
+        <p>
+          I checked the helmet contact point of the shortest and tallest drivers against the 50&nbsp;mm edge distance in T5.7.2. Both passed, but the tallest driver had only 10&nbsp;mm of margin, and the measurements had been taken in the older car, which had a different firewall and other elements. I increased the restraint length by 40&nbsp;mm, from 200&nbsp;mm on the EM-03 to 240&nbsp;mm on the EM-04, raising that margin to 50&nbsp;mm.
+        </p>
+        <div class="cs-fig-pair">
+          <figure class="cs-fig">
+            <img src="../images/projects/head-restraint/driver-short.webp" width="644" height="532" loading="lazy" decoding="async" alt="CAD side view with the shortest driver's helmet contact point marked on the head restraint and its distance to the edge measured">
+            <figcaption>Figure 1. Helmet contact point, shortest driver.</figcaption>
+          </figure>
+          <figure class="cs-fig">
+            <img src="../images/projects/head-restraint/driver-tall.webp" width="788" height="557" loading="lazy" decoding="async" alt="CAD side view with the tallest driver's helmet contact point marked close to the top edge of the head restraint">
+            <figcaption>Figure 2. Helmet contact point, tallest driver.</figcaption>
+          </figure>
+        </div>
+        <div class="cs-fig-pair">
+          <figure class="cs-fig">
+            <img src="../images/projects/head-restraint/em03-200mm.webp" width="595" height="507" loading="lazy" decoding="async" alt="Sketch of the EM-03 head restraint outline inside the main hoop, 200 millimetres long">
+            <figcaption>Figure 3. EM-03 restraint, 200&nbsp;mm.</figcaption>
+          </figure>
+          <figure class="cs-fig">
+            <img src="../images/projects/head-restraint/em04-240mm.webp" width="644" height="516" loading="lazy" decoding="async" alt="Sketch of the EM-04 head restraint outline inside the main hoop, 240 millimetres long">
+            <figcaption>Figure 4. EM-04 restraint, 240&nbsp;mm.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- 03 -->
+      <section id="concepts">
+        <h2><span class="cs-num">03</span>Concepts</h2>
+        <p>
+          The plate is S275JR steel, carried on Ø12&nbsp;×&nbsp;1&nbsp;mm tubes welded to the main hoop. I compared three ways of supporting it:
+        </p>
+        <ul class="cs-list">
+          <li><strong>Option 1, two beams.</strong> The initial concept, keeping the hole pattern of the previous year's restraint.</li>
+          <li><strong>Option 2, three beams.</strong> A third beam between the original two, on the main hoop axis.</li>
+          <li><strong>Option 3, two beams under the plate.</strong> Back to two beams, but extended underneath the plate instead of ending at its edges.</li>
+        </ul>
+        <div class="cs-fig-pair cs-fig-trio">
+          <figure class="cs-fig">
+            <img src="../images/projects/head-restraint/option1.webp" width="1200" height="570" loading="lazy" decoding="async" alt="CAD of option 1: plate with two support tubes attached at its sides">
+            <figcaption>Option 1: two beams.</figcaption>
+          </figure>
+          <figure class="cs-fig">
+            <img src="../images/projects/head-restraint/option2.webp" width="1080" height="446" loading="lazy" decoding="async" alt="CAD of option 2: plate with three support tubes, the third in the middle">
+            <figcaption>Option 2: three beams.</figcaption>
+          </figure>
+          <figure class="cs-fig">
+            <img src="../images/projects/head-restraint/option3.webp" width="847" height="384" loading="lazy" decoding="async" alt="CAD of option 3: two support tubes running underneath the plate">
+            <figcaption>Option 3: two beams under the plate.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- 04 -->
+      <section id="fea">
+        <h2><span class="cs-num">04</span>FEA set-up and results</h2>
+        <p>
+          The tube ends are fixed where they weld to the main hoop. The 890&nbsp;N rule load is applied rearward over an 80&nbsp;mm circle in two cases: at the centre of the plate, and at one edge as the worst case. A safety factor below 1 means the part would deform plastically and could not be reused.
+        </p>
+        <div class="cs-fig-pair">
+          <figure class="cs-fig">
+            <img src="../images/projects/head-restraint/load-centre.webp" width="1099" height="500" loading="lazy" decoding="async" alt="Load case with an 80 millimetre circle at the centre of the plate and fixtures at the tube ends">
+            <figcaption>Figure 5. Centre load case.</figcaption>
+          </figure>
+          <figure class="cs-fig">
+            <img src="../images/projects/head-restraint/load-edge.webp" width="1101" height="483" loading="lazy" decoding="async" alt="Load case with the 80 millimetre load circle at one edge of the plate">
+            <figcaption>Figure 6. Edge load case (worst case).</figcaption>
+          </figure>
+        </div>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Safety factors">
+          <table class="cs-table">
+            <thead>
+              <tr><th scope="col">Concept</th><th scope="col" class="num">FoS, centre load</th><th scope="col" class="num">FoS, edge load</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Option 1, two beams</th><td class="num">0.85</td><td class="num">0.60</td></tr>
+              <tr><th scope="row">Option 2, three beams</th><td class="num">0.99</td><td class="num">0.87</td></tr>
+              <tr class="cs-row-strong"><th scope="row">Option 3, two beams under plate</th><td class="num">2.16</td><td class="num">1.35</td></tr>
+            </tbody>
+            <caption>Factor of safety under the 890&nbsp;N rule load.</caption>
+          </table>
+        </div>
+        <p>
+          Adding a third beam was not enough: option 2 still failed under both load cases. Running the two beams underneath the plate changed the load path. The plate is supported across its width instead of only at its ends, and the critical point moved from the beam joints to the beam itself. That is where further gains would come from, by increasing the tube diameter or wall thickness.
+        </p>
+        <div class="cs-fig-pair">
+          <figure class="cs-fig">
+            <img src="../images/projects/head-restraint/opt1-fos-edge.webp" width="1200" height="494" loading="lazy" decoding="async" alt="Factor of safety plot for option 1 under the edge load, with the lowest values at the beam joints">
+            <figcaption>Figure 7. Option 1, edge load: FoS 0.60, critical at the joints.</figcaption>
+          </figure>
+          <figure class="cs-fig">
+            <img src="../images/projects/head-restraint/opt3-fos-edge.webp" width="1200" height="573" loading="lazy" decoding="async" alt="Factor of safety plot for option 3 under the edge load, with the plate mostly blue and the lowest values along a support tube">
+            <figcaption>Figure 8. Option 3, edge load: FoS 1.35, critical on the beam.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- 05 -->
+      <section id="limitations">
+        <h2><span class="cs-num">05</span>Limitations and next steps</h2>
+        <ul class="cs-list">
+          <li><strong>Margin.</strong> At 1.35 in the worst case the design passes with a modest margin. The analysis points to the beam as the place to add it, with a larger tube diameter or wall thickness.</li>
+          <li><strong>Documentation.</strong> The report records the load cases and results, but not a mesh-convergence check or a hand calculation of the tube bending. Both would be the first additions to make the result easier to defend.</li>
+          <li><strong>Driver data.</strong> Driver positions were measured in the previous car. The extra 40&nbsp;mm of length covers that uncertainty, and a check in the EM-04 itself would close it.</li>
+        </ul>
+        <p>
+          <strong>Tools:</strong> SolidWorks, SolidWorks Simulation.
+        </p>
+        <p class="cs-sources">
+          Source: EUSS Motorsport, <em>Head Restraint Report EM-04</em>, Frame &amp; Body department, 2023–24.
+        </p>
+      </section>
+
+      <nav class="cs-pager" aria-label="More projects">
+        <a href="lmp1-cfd.html"><span>Previous project</span>CFD analysis of an LMP1-style prototype</a>
+        <a href="pushjack.html" class="cs-pager-next"><span>Next project</span>Combined push-bar and quick-jack</a>
+      </nav>
     </article>
 
     <footer id="contact">

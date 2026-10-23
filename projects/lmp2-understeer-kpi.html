@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F7V2QDEPR3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F7V2QDEPR3');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understeer-angle KPI from LMP2 race data - Pau Lacasta</title>
+  <meta name="description" content="An understeer-angle math channel in PI Toolbox built from real Oreca 07 LMP2 outing data at Portimão, exported per lap into an Excel KPI dashboard that tracks the car&#x27;s balance through a 26-lap stint.">
+  <link rel="canonical" href="https://p-lacasta.github.io/projects/lmp2-understeer-kpi.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://p-lacasta.github.io/projects/lmp2-understeer-kpi.html">
+  <meta property="og:title" content="Understeer-angle KPI from LMP2 race data - Pau Lacasta">
+  <meta property="og:description" content="An understeer-angle math channel in PI Toolbox built from real Oreca 07 LMP2 outing data at Portimão, exported per lap into an Excel KPI dashboard that tracks the car&#x27;s balance through a 26-lap stint.">
+  <meta property="og:image" content="https://p-lacasta.github.io/images/projects/lmp2-kpi/kpi-dashboard.webp">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <!-- KaTeX renders the equations on this page -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+    onload="renderMathInElement(document.querySelector('.case-study'), {delimiters: [{left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}], throwOnError: false});"></script>
+</head>
+<body>
+  <header class="scrolled">
+    <div class="nav-container">
+      <a href="../index.html#hero" class="logo">Pau Lacasta</a>
+      <button id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav">
+        <a href="../index.html#hero">Home</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#competitions">Competitions</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="project-detail case-study">
+      <a href="../index.html#projects" class="back-link">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back to projects
+      </a>
+
+      <div class="project-detail-header">
+        <p class="cs-eyebrow">2024 · Data analysis and KPI project · Individual</p>
+        <h1>Understeer-angle KPI from LMP2 race data</h1>
+        <p class="cs-lede">
+          Using real outing data from an Oreca 07 LMP2 at Portimão, I built an understeer-angle channel in PI Toolbox from vehicle speed, lateral acceleration and steering. I exported its per-lap statistics to Excel and turned them into a dashboard that shows how the car's balance moved through a 26-lap stint, as an objective counterpart to driver feedback.
+        </p>
+        <ul class="cs-chips" aria-label="Tools">
+          <li>PI Toolbox</li>
+          <li>Microsoft Excel</li>
+        </ul>
+      </div>
+
+      <dl class="cs-meta">
+        <div>
+          <dt>Data</dt>
+          <dd>One outing of an Oreca 07 LMP2 at Portimão, 26 laps</dd>
+        </div>
+        <div>
+          <dt>Channels used</dt>
+          <dd>Vehicle speed, lateral acceleration, steering, plus throttle and brake for context</dd>
+        </div>
+        <div>
+          <dt>Output</dt>
+          <dd>Three math channels, a PI Toolbox analysis layout and an Excel KPI dashboard</dd>
+        </div>
+        <div>
+          <dt>Fastest lap</dt>
+          <dd>Lap 18, 94.76&nbsp;s</dd>
+        </div>
+      </dl>
+
+      <img src="../images/projects/lmp2-kpi/kpi-dashboard.webp" width="1171" height="1065" alt="Excel KPI dashboard with per-lap plots of maximum understeer and oversteer, balance against lap time, standard deviation against lap time, a balance pie chart and a whole-stint summary table" class="project-detail-image" style="max-height: 560px;">
+
+      <nav class="cs-toc" aria-label="On this page">
+        <p>On this page</p>
+        <ol>
+          <li><a href="#why">Why this KPI</a></li>
+          <li><a href="#channels">Math channels</a></li>
+          <li><a href="#dashboard">From laps to a dashboard</a></li>
+          <li><a href="#limitations">Limitations and next steps</a></li>
+        </ol>
+      </nav>
+
+      <!-- 01 -->
+      <section id="why">
+        <h2><span class="cs-num">01</span>Why this KPI</h2>
+        <p>
+          A driver's description of understeer or oversteer at each phase of the corner is one of the most useful inputs an engineer gets, but it is subjective and changes between drivers and conditions. A KPI should be measurable, relevant to the objective, actionable, tracked over a defined period and comparable over time. The understeer angle meets those criteria and needs only the most basic channels on a professional race car, so the method transfers to almost any car.
+        </p>
+      </section>
+
+      <!-- 02 -->
+      <section id="channels">
+        <h2><span class="cs-num">02</span>Math channels</h2>
+        <p>
+          The corner radius comes from speed and lateral acceleration. The bicycle model gives the kinematic (Ackermann) steer angle needed to follow that radius, and the understeer angle is the difference between the steering input and that kinematic angle. Positive values mean understeer and negative values mean oversteer.
+        </p>
+        <div class="cs-eq">\[ R = \frac{V^2}{a_y}, \qquad \delta_k = \arctan\frac{WB}{R} = \arctan\frac{WB\,a_y}{V^2}, \qquad \delta_u = \delta - \delta_k \]</div>
+        <p class="cs-note">WB = 3.005&nbsp;m, the Oreca 07 wheelbase.</p>
+        <figure class="cs-fig cs-fig--narrow">
+          <img src="../images/projects/lmp2-kpi/bicycle-model.webp" width="518" height="562" loading="lazy" decoding="async" alt="Bicycle model diagram showing the wheelbase, the corner radius and the Ackermann steer angle at the front wheel">
+          <figcaption>Figure 1. Bicycle model used for the Ackermann angle.</figcaption>
+        </figure>
+        <p>
+          In PI Toolbox I implemented the three channels with PI Math, converting speed from km/h to m/s, lateral acceleration from G to m/s² and the angle from radians to degrees:
+        </p>
+<pre class="cs-code"><code><span class="cs-code-comment">// Corner_r: corner radius [m]</span>
+(([Speed_Wspd_App] / 3.6) ^ 2) / ([I_ACCEL_LAT] * 9.81)
+
+<span class="cs-code-comment">// Delta_k: Ackermann angle [deg]</span>
+atan(3.005 / [corner_r]) * (180 / 3.141592)
+
+<span class="cs-code-comment">// Delta_u: understeer angle [deg]</span>
+[STEER] - [delta_k]</code></pre>
+        <p>
+          The analysis layout shows speed and lateral acceleration, throttle and brake (as a reference for driving technique), steering against the Ackermann angle, and the understeer angle on a time or distance base. Below them sit an Excel export window, a tabular outing report with per-lap statistics, and a track map with each straight and corner labelled.
+        </p>
+        <figure class="cs-fig">
+          <img src="../images/projects/lmp2-kpi/pi-toolbox.webp" width="974" height="404" loading="lazy" decoding="async" alt="PI Toolbox layout with stacked time-distance traces in the main window and an export window, outing report and track map below">
+          <figcaption>Figure 2. PI Toolbox layout with the new channels.</figcaption>
+        </figure>
+      </section>
+
+      <!-- 03 -->
+      <section id="dashboard">
+        <h2><span class="cs-num">03</span>From laps to a dashboard</h2>
+        <p>
+          For each lap I exported the maximum, minimum, mean and standard deviation of the understeer angle into Excel. I then added an oversteer column (the absolute value of the minimum), a balance flag showing whether understeer or oversteer dominated the lap, and outing averages. The dashboard turns that table into five views:
+        </p>
+        <ul class="cs-list">
+          <li><strong>Peaks per lap.</strong> Maximum understeer and oversteer side by side, so unusual laps stand out. Laps 12 and 23 had oversteer peaks well above the rest, which could indicate a spin or a large snap.</li>
+          <li><strong>Balance against lap time.</strong> The mean understeer angle per lap. The first half of the stint trended towards oversteer, possibly from rear tyres overheating, but the fastest laps came with high oversteer values, so the trend was not costing time.</li>
+          <li><strong>Standard deviation against lap time.</strong> A proxy for how aggressively the car was driven. More deviation generally came with faster laps, but the fastest lap (lap 18) had notably less, so the data did not support a firm conclusion.</li>
+          <li><strong>Balance split.</strong> The share of laps dominated by understeer or oversteer, for comparing stints and tyre compounds.</li>
+          <li><strong>Stint summary.</strong> Laps, peak understeer and oversteer, mean and deviation for the whole outing, again for comparing runs in different conditions.</li>
+        </ul>
+      </section>
+
+      <!-- 04 -->
+      <section id="limitations">
+        <h2><span class="cs-num">04</span>Limitations and next steps</h2>
+        <p>
+          This is one of the simplest ways to build an understeer KPI. The formulation holds only for small steering angles and with the tyres in their linear range, so it gives a general picture of the car's behaviour, and its conclusions need to be read with caution.
+        </p>
+        <p>
+          The natural extensions are statistics per corner rather than per lap, using the labelled track map, and comparing the same KPI across stints and tyre compounds, which is what the dashboard's summary views were built for.
+        </p>
+        <p>
+          <strong>Tools:</strong> PI Toolbox (PI Math channels, layouts, Excel export), Microsoft Excel.
+        </p>
+        <p class="cs-sources">
+          Source: P. Lacasta Sauret, <em>Data analysis &amp; KPI: Understeer angle</em>, 9 November 2024, and the accompanying Excel workbook.
+        </p>
+      </section>
+
+      <nav class="cs-pager" aria-label="More projects">
+        <a href="pushjack.html"><span>Previous project</span>Combined push-bar and quick-jack</a>
+        <a href="crash-simulation.html" class="cs-pager-next"><span>Next project</span>Explicit frontal crash simulation</a>
+      </nav>
+    </article>
+
+    <footer id="contact">
+      <div class="footer-inner">
+        <div class="footer-main reveal">
+          <h2>Let's connect!</h2>
+        </div>
+        <ul class="footer-links reveal">
+          <li>
+            <a href="mailto:p.lacasta.sauret@gmail.com" class="footer-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 5h18v14H3z" stroke-linejoin="round"/><path d="m3 6 9 7 9-7" stroke-linejoin="round"/></svg>
+              p.lacasta.sauret@gmail.com
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/pau-lacasta" target="_blank" rel="noopener" class="footer-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="8" y1="10" x2="8" y2="17"/><circle cx="8" cy="6.5" r="0.75" fill="currentColor" stroke="none"/><path d="M12 17v-4.5a2 2 0 0 1 4 0V17" stroke-linecap="round"/></svg>
+              LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Pau Lacasta. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+
+  <button id="to-top" aria-label="Back to top">↑</button>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

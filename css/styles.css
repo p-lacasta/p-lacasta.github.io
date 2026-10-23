@@ -1148,6 +1148,7 @@ header.scrolled .nav-toggle-bar{
 }
 
 .case-study section a,
+.cs-meta a,
 .cs-toc a,
 .cs-sources a{
     color: var(--color-accent-dark);
@@ -1200,7 +1201,13 @@ header.scrolled .nav-toggle-bar{
 .table-wrap{
     overflow-x: auto;
     margin: 1.5rem 0;
-    background: var(--color-surface);
+    /* Edge shadows appear only when the table can scroll sideways */
+    background:
+        linear-gradient(to right, var(--color-surface) 30%, rgba(255,255,255,0)) left center / 40px 100% no-repeat local,
+        linear-gradient(to left, var(--color-surface) 30%, rgba(255,255,255,0)) right center / 40px 100% no-repeat local,
+        radial-gradient(farthest-side at 0 50%, rgba(0,0,0,0.2), rgba(0,0,0,0)) left center / 14px 100% no-repeat scroll,
+        radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,0.2), rgba(0,0,0,0)) right center / 14px 100% no-repeat scroll,
+        var(--color-surface);
     border-radius: var(--radius-sm);
     box-shadow: var(--shadow-sm);
 }
@@ -1293,6 +1300,128 @@ header.scrolled .nav-toggle-bar{
     align-items: start;
 }
 
+.cs-fig-trio{
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.cs-gallery{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+}
+
+.cs-gallery figure{
+    margin: 0;
+}
+
+.cs-gallery img{
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+.cs-gallery--wide{
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.cs-gallery--wide img{
+    aspect-ratio: 16 / 10;
+    object-fit: contain;
+    background: #ffffff;
+}
+
+.cs-gallery figcaption{
+    font-size: 0.8rem;
+    line-height: 1.45;
+    color: var(--color-text-soft);
+    margin-top: 0.45rem;
+}
+
+.cs-steps{
+    list-style: none;
+    counter-reset: cs-step;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin: 1.25rem 0 1.5rem;
+    max-width: 70ch;
+}
+
+.cs-steps li{
+    position: relative;
+    counter-increment: cs-step;
+    padding-left: 2.6rem;
+    min-height: 1.8rem;
+}
+
+.cs-steps li::before{
+    content: counter(cs-step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cs-arch{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.cs-arch-col{
+    background: var(--color-surface);
+    border-radius: var(--radius-sm);
+    border-top: 3px solid var(--color-accent);
+    box-shadow: var(--shadow-sm);
+    padding: 1rem 1.1rem 1.1rem;
+}
+
+.cs-arch-col h4{
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.75rem;
+    color: var(--color-accent-dark);
+    margin-bottom: 0.6rem;
+}
+
+.cs-arch-col ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.cs-arch-col li{
+    font-size: 0.85rem;
+    background: rgba(160,130,101,0.08);
+    border-radius: 6px;
+    padding: 0.35rem 0.6rem;
+}
+
+.cs-arch-col p{
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--color-text-soft);
+    margin: 0.7rem 0 0;
+}
+
+.cs-fig-pair .cs-fig{
+    margin: 1rem 0;
+}
+
 .cs-callout{
     border-left: 3px solid var(--color-accent);
     background: var(--color-surface);
@@ -1313,6 +1442,22 @@ header.scrolled .nav-toggle-bar{
     border-radius: var(--radius-sm);
     padding: 0.5rem 1rem;
     margin: 1rem 0 1.25rem;
+}
+
+.cs-code{
+    background: #2b2621;
+    color: #f3ede6;
+    border-radius: var(--radius-sm);
+    padding: 0.9rem 1.1rem;
+    margin: 1rem 0 1.5rem;
+    overflow-x: auto;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+.cs-code .cs-code-comment{
+    color: #c9b49c;
 }
 
 .cs-sources{
@@ -1361,8 +1506,14 @@ header.scrolled .nav-toggle-bar{
         font-size: 1.8rem;
     }
 
-    .cs-fig-pair{
+    .cs-fig-pair,
+    .cs-fig-trio,
+    .cs-arch{
         grid-template-columns: 1fr;
+    }
+
+    .cs-gallery{
+        grid-template-columns: 1fr 1fr;
     }
 
     .cs-keyfig strong{
@@ -1371,6 +1522,12 @@ header.scrolled .nav-toggle-bar{
 
     .cs-pager a{
         max-width: 100%;
+    }
+
+    /* Narrow tables wrap their headers instead of overflowing */
+    .cs-table:not(.cs-table--wide) thead th,
+    .cs-table:not(.cs-table--wide) tbody th{
+        white-space: normal;
     }
 
     /* Text-heavy tables become labelled cards on phones */
@@ -1410,12 +1567,23 @@ header.scrolled .nav-toggle-bar{
     .cs-table--stack td[data-label]::before{
         content: attr(data-label);
         display: block;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        font-size: 0.68rem;
+        letter-spacing: 0.02em;
+        font-size: 0.75rem;
         font-weight: 600;
         color: var(--color-text-soft);
         margin-top: 0.35rem;
+    }
+
+    /* Numeric cells: label and value on one line */
+    .cs-table--stack td.num[data-label]{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1rem;
+    }
+
+    .cs-table--stack td.num[data-label]::before{
+        margin-top: 0;
     }
 }
 
