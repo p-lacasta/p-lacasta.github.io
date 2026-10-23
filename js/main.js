@@ -26,29 +26,34 @@ if (header && hero) {
    file added to images/hero/ must also be added to this list by hand.
    (.heic files are skipped — browsers can't render that format.) */
 const heroImages = [
-    "images/hero/FSS25_hero.jpg",
-    "images/hero/FSPT25_hero.jpeg",
-    "images/hero/20250719_142926000_iOS%203.jpg",
-    "images/hero/20250812_192207000_iOS.jpg",
-    "images/hero/20250814_150203000_iOS.jpg",
-    "images/hero/WhatsApp%20Image%202026-08-09%20at%2019.28.55.jpeg"
+    "images/hero/hero-1.webp",
+    "images/hero/hero-2.webp",
+    "images/hero/hero-3.webp",
+    "images/hero/hero-4.webp",
+    "images/hero/hero-5.webp",
+    "images/hero/hero-6.webp"
 ];
 
 const heroBgLayers = document.querySelectorAll(".hero-bg-layer");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 if (heroBgLayers.length === 2 && heroImages.length > 0) {
-    heroImages.forEach((src) => {
-        const preload = new Image();
-        preload.src = src;
-    });
-
     let activeLayer = 0;
     let imageIndex = 0;
+
+    /* Load only the next slide in advance, not the whole set */
+    const preloadNext = () => {
+        const next = new Image();
+        next.src = heroImages[(imageIndex + 1) % heroImages.length];
+    };
 
     heroBgLayers[0].style.backgroundImage = `url("${heroImages[0]}")`;
     heroBgLayers[0].classList.add("is-active");
 
-    if (heroImages.length > 1) {
+    /* With reduced motion the first photo stays put */
+    if (heroImages.length > 1 && !prefersReducedMotion) {
+        preloadNext();
+
         setInterval(() => {
             imageIndex = (imageIndex + 1) % heroImages.length;
             const nextLayer = activeLayer === 0 ? 1 : 0;
@@ -58,6 +63,7 @@ if (heroBgLayers.length === 2 && heroImages.length > 0) {
             heroBgLayers[activeLayer].classList.remove("is-active");
 
             activeLayer = nextLayer;
+            preloadNext();
         }, 6000);
     }
 }
@@ -81,7 +87,7 @@ if (toTopButton) {
 
 /* Active section */
 const sections = document.querySelectorAll("main section, footer");
-const navLinks = document.querySelectorAll("nav a");
+const navLinks = document.querySelectorAll("#primary-nav a");
 
 const setActiveLink = () => {
     const scrollPosition = window.scrollY + 140;
@@ -106,7 +112,7 @@ window.addEventListener("resize", setActiveLink);
 
 /* Hamburger menu */
 const navToggle = document.querySelector("#nav-toggle");
-const nav = document.querySelector("nav");
+const nav = document.querySelector("#primary-nav");
 
 if (navToggle && nav) {
     const closeMenu = () => {

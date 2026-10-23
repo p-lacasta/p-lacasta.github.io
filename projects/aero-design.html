@@ -1,15 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F7V2QDEPR3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F7V2QDEPR3');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Design of the aerodynamic package of a Formula Student vehicle - Pau Lacasta</title>
-  <meta name="description" content="Led the aerodynamic package design for the EM-04, iterating the nosecone, underbody and sidewings through CFD to achieve a 260% improvement in CL/CD.">
+  <title>EM05 aerodynamic package design (CFD) - Pau Lacasta</title>
+  <meta name="description" content="CFD-driven design of the EM05 Formula Student aerodynamic package in Altair HyperMesh and AcuSolve: 44 design iterations, CL/CD +260.59 % relative to the EM03 package, centre of pressure moved from 22 % to 41 % front.">
+  <link rel="canonical" href="https://p-lacasta.github.io/projects/aero-design.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://p-lacasta.github.io/projects/aero-design.html">
+  <meta property="og:title" content="EM05 aerodynamic package design (CFD) - Pau Lacasta">
+  <meta property="og:description" content="44 CFD design iterations in Altair HyperMesh and AcuSolve. CL/CD +260.59 % relative to the EM03 package, centre of pressure moved from 22 % to 41 % front.">
+  <meta property="og:image" content="https://p-lacasta.github.io/images/AeroDesign.webp">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
+
+  <!-- KaTeX renders the equations on this page -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+    onload="renderMathInElement(document.querySelector('.case-study'), {delimiters: [{left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}], throwOnError: false});"></script>
 </head>
 <body>
   <header class="scrolled">
@@ -31,30 +53,421 @@
   </header>
 
   <main>
-    <article class="project-detail">
+    <article class="project-detail case-study">
       <a href="../index.html#projects" class="back-link">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Back to projects
       </a>
 
       <div class="project-detail-header">
-        <p class="project-year">2025</p>
-        <h1>Design of the aerodynamic package of a Formula Student vehicle</h1>
-        <p class="project-tools">SolidWorks · Altair</p>
-      </div>
-
-      <img src="../images/AeroDesign.png" alt="EM05 Aerodynamic package" class="project-detail-image">
-
-      <div class="project-detail-summary">
-        <p>
-          Led the aerodynamic package design for the EM‑04, iterating the nosecone, underbody and sidewings through CFD to achieve a 260% improvement in CL/CD over the previous car.
+        <p class="cs-eyebrow">2024–25 · BSc thesis · EUSS Motorsport, Formula Student</p>
+        <h1>Aerodynamic package design for the EM05 Formula Student car</h1>
+        <p class="cs-lede">
+          I designed the nosecone, underbody and side wings of the EM05 through 44 CFD-driven design iterations in Altair HyperMesh and AcuSolve. Relative to the EM03 package, the final design raised downforce (CLA) by 339.39&nbsp;%, raised aerodynamic efficiency (CL/CD) by 260.59&nbsp;% and moved the centre of pressure from 22&nbsp;% to 41&nbsp;% front, inside the target window.
         </p>
+        <ul class="cs-chips" aria-label="Tools">
+          <li>Altair HyperMesh</li>
+          <li>Altair AcuSolve</li>
+          <li>OptimumLap</li>
+          <li>SolidWorks</li>
+        </ul>
       </div>
 
-      <!-- Add more project details, images, and results here -->
-      <div class="project-detail-placeholder">
-        More details on this project are coming soon.
-      </div>
+      <dl class="cs-meta">
+        <div>
+          <dt>My role</dt>
+          <dd>Head of Aerodynamics. Sole author of the thesis: CFD process, design iterations and analysis</dd>
+        </div>
+        <div>
+          <dt>Team interfaces</dt>
+          <dd>Frame (chassis, CoG), Mechanical Systems (radiators), Electrical Systems (battery cooling), design reviews with team alumni</dd>
+        </div>
+        <div>
+          <dt>Compute</dt>
+          <dd>82 simulations, 18,701 CPU-hours, all on a laptop (i7-13700H, 14 cores, 32&nbsp;GB)</dd>
+        </div>
+        <div>
+          <dt>Outcome</dt>
+          <dd>Package manufactured for the 2025 season (<a href="aero-manufacturing.html">manufacturing case study</a>)</dd>
+        </div>
+      </dl>
+
+      <img src="../images/AeroDesign.webp" width="932" height="720" alt="CAD render of the EM05 with its aerodynamic package: low nosecone, underbody with diffuser and strakes, and two-element side wings ahead of the rear wheels" class="project-detail-image">
+
+      <ul class="cs-keyfigs">
+        <li class="cs-keyfig">
+          <strong>+260.59&nbsp;%</strong>
+          <span>CL/CD, −0.269 → −0.970, relative to the EM03 package</span>
+        </li>
+        <li class="cs-keyfig">
+          <strong>+339.39&nbsp;%</strong>
+          <span>Downforce (CLA), −0.066 → −0.290&nbsp;m², relative to the EM03 package</span>
+        </li>
+        <li class="cs-keyfig">
+          <strong>22 → 41&nbsp;%</strong>
+          <span>Centre of pressure, % front. Target 40–49&nbsp;%, CoG at 49&nbsp;%</span>
+        </li>
+        <li class="cs-keyfig">
+          <strong>−0.24 to −0.30&nbsp;s</strong>
+          <span>Per lap, FS Austria endurance, OptimumLap with only CL and CD changed</span>
+        </li>
+      </ul>
+
+      <nav class="cs-toc" aria-label="On this page">
+        <p>On this page</p>
+        <ol>
+          <li><a href="#problem">Problem and requirements</a></li>
+          <li><a href="#method">CFD method and set-up</a></li>
+          <li><a href="#baseline">Baseline: the EM03 package</a></li>
+          <li><a href="#concept">Concept and alternatives</a></li>
+          <li><a href="#iterations">Iteration and decision log</a></li>
+          <li><a href="#results">Results</a></li>
+          <li><a href="#validation">Validation</a></li>
+          <li><a href="#limitations">Limitations and next steps</a></li>
+          <li><a href="#role">Role, team and tools</a></li>
+        </ol>
+      </nav>
+
+      <p class="cs-note">Sign convention, as in the thesis: lift coefficients are negative for downforce. Percentage changes compare magnitudes. Coefficients use the 0.834&nbsp;m² frontal area.</p>
+
+      <!-- 01 -->
+      <section id="problem">
+        <h2><span class="cs-num">01</span>Problem and requirements</h2>
+        <p>
+          EUSS Motorsport's first electric car, the EM-04, competed at Formula Student Spain 2024 but did not pass scrutineering. The switch from combustion to an electric powertrain had taken the budget for three seasons, so the aerodynamic package had not been developed in that time, and a generational change in the team had left a gap in aerodynamics knowledge. For 2024–25 the aerodynamics department was reinstated, and I took on the complete package for the EM05 as my BSc thesis. It was the first thesis in the team's history to cover the full package rather than individual parts.
+        </p>
+        <p>
+          The team's season goals set the brief. The first was to pass mechanical and electrical scrutineering, which includes the rain test, so the bodywork had to keep water out of the car. The second was to raise the engineering design event score towards a 75-point goal.
+        </p>
+
+        <h3>Constraints</h3>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Design constraints">
+          <table class="cs-table cs-table--wide cs-table--stack">
+            <thead>
+              <tr><th scope="col">Constraint</th><th scope="col">Source</th><th scope="col">Effect on the design</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Aerodynamic device and bodywork rules</td><td data-label="Source">FSG 2025 v1.1, T2 and T8</td><td data-label="Effect on the design">Bounded where the nose, floor and side wings could sit</td></tr>
+              <tr><td>Minimum static ground clearance 30&nbsp;mm</td><td data-label="Source">FSG 2025 T2.2.1</td><td data-label="Effect on the design">Set the lowest point of the floor and diffuser</td></tr>
+              <tr><td>Edge radii ≥ 3&nbsp;mm forward-facing, ≥ 1&nbsp;mm elsewhere</td><td data-label="Source">FSG 2025 T2.4.1</td><td data-label="Effect on the design">Applies to the underbody inlet (see <a href="#limitations">limitations</a>)</td></tr>
+              <tr><td>Rain test</td><td data-label="Source">Scrutineering</td><td data-label="Effect on the design">Bodywork must seal the car's components</td></tr>
+              <tr><td>Chassis geometry</td><td data-label="Source">Frame department</td><td data-label="Effect on the design">Defined the available volumes. Capped the floor angle at 2° and the diffuser at 20°</td></tr>
+              <tr><td>Radiator location</td><td data-label="Source">Mechanical Systems department</td><td data-label="Effect on the design">Cooling layout studied with them before concept work</td></tr>
+              <tr><td>No front or rear wings this season</td><td data-label="Source">Team decision</td><td data-label="Effect on the design">Wings add design, simulation and manufacturing complexity without serving the season goals. Package limited to nose, underbody and side wings</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Performance targets</h3>
+        <p>
+          Teams that publish their coefficients mostly run packages refined over many seasons, so they were not a fair reference for the team's second package. I set the targets from Oxyzoglou's study of what each level of package complexity achieves on a Formula Student car, taking the "underbody channels" configuration, the closest match to a package without wings.
+        </p>
+        <p>
+          For the centre of pressure, the Frame department placed the centre of gravity at 49&nbsp;% front. Drivers had repeatedly reported understeer, and a rearward CoP adds understeer, so I aimed to keep the CoP behind the CoG for high-speed stability but as close to it as possible.
+        </p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Performance targets">
+          <table class="cs-table">
+            <thead>
+              <tr><th scope="col">Target</th><th scope="col" class="num">CLA [m²]</th><th scope="col" class="num">CDA [m²]</th><th scope="col" class="num">CL/CD [–]</th><th scope="col" class="num">CoP [% front]</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">EM05</th><td class="num">−0.329</td><td class="num">0.271</td><td class="num">−1.215</td><td class="num">40–49</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 02 -->
+      <section id="method">
+        <h2><span class="cs-num">02</span>CFD method and set-up</h2>
+        <p>
+          I picked the simulation speed from an OptimumLap run of the EM03 on the Formula Student Austria endurance track. Its average speed, 51.08&nbsp;km/h (14.2&nbsp;m/s), represents the car's normal operating point (lowest 20.03&nbsp;km/h, highest 87.42&nbsp;km/h). With the car length as the reference length, the flow is fully turbulent:
+        </p>
+        <div class="cs-eq">\[ \mathrm{Re} = \frac{\rho v L}{\mu} = \frac{1.184 \times 14.2 \times 3.33}{1.81\times10^{-5}} \approx 3.1\times10^{6} \]</div>
+        <p>
+          I then built a baseline mesh on the EM03 and used it to fix the turbulence model, the prism layers and the mesh density before any design work (see <a href="#validation">validation</a>). The settings below are the ones used for all design iterations.
+        </p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="CFD set-up">
+          <table class="cs-table">
+            <thead>
+              <tr><th scope="col">Item</th><th scope="col">Setting</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Software</th><td>Altair HyperMesh (meshing), AcuSolve (solver)</td></tr>
+              <tr><th scope="row">Turbulence model</th><td>Realizable k-ε (RANS), selected over k-ω SST</td></tr>
+              <tr><th scope="row">Inflow</th><td>14.2&nbsp;m/s, rotating wheels</td></tr>
+              <tr><th scope="row">Domain</th><td>Inlet 9&nbsp;m upstream, outlet 30&nbsp;m downstream, 6&nbsp;m high, 6&nbsp;m to the side (car length 3.33&nbsp;m)</td></tr>
+              <tr><th scope="row">Surface mesh</th><td>Wheels 18&nbsp;mm, suspension 5&nbsp;mm, chassis 9&nbsp;mm</td></tr>
+              <tr><th scope="row">Volume refinement</th><td>Geometry box 23&nbsp;mm, wake box 113&nbsp;mm, far field 270&nbsp;mm</td></tr>
+              <tr><th scope="row">Prism layers</th><td>25 layers, growth ratio 1.30, target y+ 0.5 (mean output y+ 0.89), truncate policy at sharp corners</td></tr>
+              <tr><th scope="row">Mesh size</th><td>≈ 5.7 million nodes, ≈ 10&nbsp;h per run</td></tr>
+              <tr><th scope="row">Convergence</th><td>Residuals to 10<sup>−2.5</sup> (AcuSolve L1 norm, roughly 10<sup>−3</sup> in L2 terms), relaxation factor 0.25, 300 iterations, monitors on pressure drag, friction drag, inlet pressure and lift, flow-pattern check on every run</td></tr>
+              <tr><th scope="row">Reference area</th><td>0.834&nbsp;m² frontal area, from CAD</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Sizing the first prism layer</h3>
+        <p>
+          I sized the inflation layers by hand from flat-plate correlations, then checked the total layer height in the mesh against the boundary-layer thickness. For y+ = 1 and 25 layers, using Schlichting's skin-friction correlation and the 1/7th-power-law boundary layer:
+        </p>
+        <div class="cs-eq">\[ \begin{aligned}
+          c_f &amp;= \left[2\log_{10}\mathrm{Re} - 0.65\right]^{-2.3} = 3.10\times10^{-3} \\
+          \tau_w &amp;= \tfrac{1}{2}\rho U^2 c_f = 0.370\ \mathrm{Pa} \\
+          u_\tau &amp;= \sqrt{\tau_w/\rho} = 0.559\ \mathrm{m/s} \\
+          y_H &amp;= 2\,\frac{y^+ \mu}{\rho\, u_\tau} = 54.7\ \mu\mathrm{m} \\
+          \delta_{99} &amp;= \frac{0.38\,L}{\mathrm{Re}^{1/5}} = 63.7\ \mathrm{mm} \\
+          \delta_{99} &amp;= y_H\,\frac{1-G^{N}}{1-G} \;\Rightarrow\; G = 1.256 \quad (N = 25)
+        \end{aligned} \]</div>
+        <p>
+          The y+ study in section 07 then moved the target to 0.5 with a growth ratio of 1.30.
+        </p>
+      </section>
+
+      <!-- 03 -->
+      <section id="baseline">
+        <h2><span class="cs-num">03</span>Baseline: the EM03 package</h2>
+        <p>
+          With the method fixed, I analysed the EM03 package. It produced CLA −0.066&nbsp;m², CDA 0.245&nbsp;m², CL/CD −0.269 and a centre of pressure at only 22&nbsp;% front. Three problems stood out.
+        </p>
+        <ul class="cs-list">
+          <li><strong>The nose made lift.</strong> Its concave lower surface sat under the stagnation point and created a high-pressure region whose resultant pointed up and back. The nose produced +6.0&nbsp;N of lift while the whole car made only 8.0&nbsp;N of downforce at 14.2&nbsp;m/s, and it pulled the CoP rearward.</li>
+          <li><strong>The diffuser lost energy.</strong> Total-pressure plots showed a large loss under the diffuser and negative wall shear stress revealed separated flow, so the device barely worked.</li>
+          <li><strong>The sidepods starved the radiators.</strong> The radiators sat in low-energy air from the sidepods. A run with the sidepods removed raised CL/CD by 73.61&nbsp;% (−0.269 → −0.467) with almost no drag change.</li>
+        </ul>
+        <div class="cs-fig-pair">
+          <figure class="cs-fig">
+            <img src="../images/projects/aero-design/em03-nose-cp.webp" width="1185" height="594" loading="lazy" decoding="async" alt="Pressure coefficient contour at the car's symmetry plane around the EM03 nose, with a red high-pressure region under the concave nose and arrows showing the resultant lift and drag components">
+            <figcaption>Figure 1. EM03 nose, pressure coefficient at the symmetry plane. The concave surface under the stagnation point produces lift and drag (thesis Fig. 44).</figcaption>
+          </figure>
+          <figure class="cs-fig">
+            <img src="../images/projects/aero-design/em03-diffuser-cpt.webp" width="1200" height="474" loading="lazy" decoding="async" alt="Total pressure coefficient at the symmetry plane of the EM03 showing a blue low-energy region behind and under the diffuser">
+            <figcaption>Figure 2. EM03, total pressure coefficient at the symmetry plane. The cold region under and behind the diffuser is the energy loss (thesis Fig. 46).</figcaption>
+          </figure>
+        </div>
+        <p>
+          This gave three design goals: a nose that stops making lift, a diffuser that keeps its flow energised, and a CoP moved forward towards the CoG.
+        </p>
+      </section>
+
+      <!-- 04 -->
+      <section id="concept">
+        <h2><span class="cs-num">04</span>Concept and alternatives</h2>
+        <p>
+          Front and rear wings were ruled out at the start to contain cost and complexity. Cooling openings for the battery were discussed with the Electrical Systems department, but the EM-04 had never completed a cooling test, so there was no data to size the airflow and the openings could not be justified.
+        </p>
+        <p>
+          I sketched several concepts on paper and reviewed them with the alumni who had designed the previous package. Only the most promising one went to CAD, so the thesis goal of three CAD design philosophies was not met. Instead, the large changes were settled at the concept stage. The chosen concept has a new nosecone, an underbody with an angled floor and a diffuser, and side wings in place of the sidepods. The side wings were shaped to outwash the front-tyre wake away from the underbody.
+        </p>
+        <figure class="cs-fig cs-fig--narrow">
+          <img src="../images/projects/aero-design/em05-concept.webp" width="897" height="1140" loading="lazy" decoding="async" alt="Line drawings of the EM05 concept in isometric, top, front and side views, showing the low nose, side wings and underbody">
+          <figcaption>Figure 3. Final EM05 concept, selected after reviews with the team's alumni (thesis Fig. 60).</figcaption>
+        </figure>
+      </section>
+
+      <!-- 05 -->
+      <section id="iterations">
+        <h2><span class="cs-num">05</span>Iteration and decision log</h2>
+        <p>
+          The design phase ran to 44 iterations. Including the set-up studies, the project used 82 simulations, 1,487.2&nbsp;h of elapsed time, 18,701 CPU-hours and 352&nbsp;GB of results. Each study below is compared against its own baseline, so the values do not chain exactly from one row to the next.
+        </p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Iteration and decision log">
+          <table class="cs-table cs-table--wide cs-table--stack">
+            <thead>
+              <tr><th scope="col">Study</th><th scope="col">Variants</th><th scope="col">Result</th><th scope="col">Decision</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Nose height</th><td data-label="Variants">410 / 305 / 190&nbsp;mm</td><td data-label="Result">Full-car CLA −0.060 → −0.070&nbsp;m² (+16.48&nbsp;%). Nose lift CLA 0.013 → 0.003&nbsp;m² (−71.39&nbsp;%)</td><td data-label="Decision">Low nose, 190&nbsp;mm</td></tr>
+              <tr><th scope="row">Floor angle</th><td data-label="Variants">0° / 1° / 2° (2° = chassis limit)</td><td data-label="Result">Full-car CL/CD −0.051 / −0.145 / −0.188</td><td data-label="Decision">2°</td></tr>
+              <tr><th scope="row">Underbody inlet</th><td data-label="Variants">Straight / medium / open</td><td data-label="Result">Full-car CLA −0.068 / +0.144 / +0.189&nbsp;m². High-pressure region at the wider inlets</td><td data-label="Decision">Straight inlet kept</td></tr>
+              <tr><th scope="row">Diffuser angle</th><td data-label="Variants">5° / 15° / 20°</td><td data-label="Result">Full-car CL/CD −0.188 / −0.266 / −0.217. Total-pressure loss grew with angle</td><td data-label="Decision">15°, then strakes</td></tr>
+              <tr><th scope="row">Strakes</th><td data-label="Variants">None → 2 at 180&nbsp;mm → 2 at 240&nbsp;mm → 4, then 4 with a 20° diffuser</td><td data-label="Result">Full-car CL/CD −0.266 (none) → −0.707 (4 strakes, 15°) and −0.723 (4 strakes, 20°)</td><td data-label="Decision">Four strakes</td></tr>
+              <tr><th scope="row">Vortex tunnel</th><td data-label="Variants">Tunnel at the side-wing edge</td><td data-label="Result">Full-car CL/CD −0.707 → −0.630 (−10.89&nbsp;%)</td><td data-label="Decision">Rejected</td></tr>
+              <tr><th scope="row">Side-wing fence</th><td data-label="Variants">Fence under the side wing</td><td data-label="Result">Full-car CL/CD −0.630 → −0.598 (−5.08&nbsp;%). Placed where pressure was already low</td><td data-label="Decision">Rejected</td></tr>
+              <tr><th scope="row">Flap 1 (lower)</th><td data-label="Variants">Shortlist N22, RAE 100, NACA 6412, NACA 4412, S4083. Gap 15/20&nbsp;mm, overlap 0/10&nbsp;mm, AoA 5/10/15°</td><td data-label="Result">Full-car CL/CD −0.782 at 15&nbsp;mm gap, 10&nbsp;mm overlap, 5°</td><td data-label="Decision">NACA 6412</td></tr>
+              <tr><th scope="row">Flap 2 (upper)</th><td data-label="Variants">Shortlist MH115, GOE225, S1210, S1223, E216. Gap 10/15/20&nbsp;mm, overlap 0/10/20&nbsp;mm, AoA 10–25°</td><td data-label="Result">Full-car CL/CD −0.859 at 10&nbsp;mm gap, 20&nbsp;mm overlap, 20°. S1223 made more downforce but at lower efficiency</td><td data-label="Decision">S1210</td></tr>
+              <tr><th scope="row">Side-wing floor AoA</th><td data-label="Variants">5° / 10° / 15°</td><td data-label="Result">Full-car CL/CD −0.859 / −0.781 / −0.970. Rear-wheel CDA 0.014 → 0.001&nbsp;m² (−92.86&nbsp;%)</td><td data-label="Decision">15°</td></tr>
+              <tr><th scope="row">Endplates</th><td data-label="Variants">Small / medium / large</td><td data-label="Result">Full-car CL/CD −0.816 / −0.859 / −0.805. Small: stronger tip vortex. Large: recirculation</td><td data-label="Decision">Medium</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Nose: removing the lift</h3>
+        <p>
+          Other teams' cars showed no clear trend between high and low noses. A high nose should send more air under the floor, but the inclined surface under its stagnation region pushes upwards. I simulated the highest and lowest positions possible, plus a middle one. The 190&nbsp;mm nose cut the nose's own lift by 71.39&nbsp;% and raised full-car downforce by 16.48&nbsp;%, while underbody downforce changed little (CLA −0.199 → −0.206&nbsp;m²). The nose redesign is the main reason the centre of pressure moved forward.
+        </p>
+        <figure class="cs-fig cs-fig--narrow">
+          <img src="../images/projects/aero-design/em05-nosecones.webp" width="930" height="1008" loading="lazy" decoding="async" alt="Three pressure coefficient plots of the high, medium and low nosecones at the symmetry plane, with the red stagnation region shrinking as the nose is lowered">
+          <figcaption>Figure 4. Pressure coefficient for the high, medium and low nosecones (thesis Fig. 62).</figcaption>
+        </figure>
+
+        <h3>Diffuser and strakes: keeping the flow energised</h3>
+        <p>
+          A steeper diffuser shrinks the low-pressure wake behind the car, and efficiency rose up to 15°. The total-pressure plots, however, showed the flow losing more energy as the angle grew. A stream of water over a spoon behaves the same way. At a shallow angle the stream expands evenly. At a steep angle it stays attached, but it loses energy following the curved surface and a low-pressure region forms in the upper part of the stream. Strakes were the fix. Air that meets the stagnation point on the rear tyre enters the underbody and forms vortices that travel along the diffuser. With four strakes, the flow under a 15° diffuser kept its energy, returning to the even "shallow angle" case of the experiment without reducing the angle. Full-car CL/CD rose from −0.266 to −0.707.
+        </p>
+        <figure class="cs-fig">
+          <img src="../images/projects/aero-design/em05-spoon-cpt.webp" width="1200" height="599" loading="lazy" decoding="async" alt="Photos of water flowing over a spoon at two angles above total pressure coefficient plots of the 15 degree diffuser without strakes and with four strakes">
+          <figcaption>Figure 5. Total pressure coefficient at the symmetry plane, 15° diffuser, without strakes (left) and with four strakes (right), next to the matching spoon experiment (thesis Fig. 78).</figcaption>
+        </figure>
+        <figure class="cs-fig cs-fig--narrow">
+          <img src="../images/projects/aero-design/em05-strakes.webp" width="1011" height="1152" loading="lazy" decoding="async" alt="Bottom-view streamlines under the EM05 for the two-strake and large-diffuser cases, with the strakes marked and the vortices they generate highlighted">
+          <figcaption>Figure 6. Streamlines for the "2 strakes" (top) and "large diffuser" (bottom) cases. Strakes and skirts in yellow, vortices outlined in white (thesis Fig. 77).</figcaption>
+        </figure>
+
+        <h3>Side wings: outwash and the flap cascade</h3>
+        <p>
+          The side wing's curved leading section pushes the front-tyre wake outboard, away from the underbody and the flaps ahead of the rear wheel. I selected each flap from a five-airfoil shortlist by its lift, drag and efficiency curves over the expected angle-of-attack range, then iterated gap, overlap and angle of attack in CFD. The largest single gain came from the floor angle of attack under the side wing: at 15°, the flow no longer stagnated directly on the rear tyre, rear-wheel CDA fell from 0.014 to 0.001&nbsp;m² and full-car CL/CD reached −0.970.
+        </p>
+        <figure class="cs-fig">
+          <img src="../images/projects/aero-design/em05-outwash.webp" width="1200" height="675" loading="lazy" decoding="async" alt="Top view of streamlines around the EM05 front wheel coloured by velocity, showing the slow turbulent wake being pushed outboard of the side wing">
+          <figcaption>Figure 7. Top view, streamlines around the front wheel coloured by velocity [m/s]. Cold colours mark the turbulent wake being pushed outboard (thesis Fig. 84).</figcaption>
+        </figure>
+        <figure class="cs-fig">
+          <img src="../images/projects/aero-design/em05-sidewing-section.webp" width="1200" height="593" loading="lazy" decoding="async" alt="Technical drawing of the side wing longitudinal section, with the NACA 6412 and S1210 flaps and the gap, overlap and angle-of-attack dimensions that were iterated">
+          <figcaption>Figure 8. Side-wing section with the iterated dimensions: floor AoA, and gap, overlap and AoA of the NACA 6412 and S1210 flaps (thesis Fig. 98).</figcaption>
+        </figure>
+        <figure class="cs-fig cs-fig--narrow">
+          <img src="../images/projects/aero-design/em05-floor-aoa.webp" width="1125" height="1425" loading="lazy" decoding="async" alt="Three isometric views of the EM05 coloured by pressure coefficient for side-wing floor angles of 5, 10 and 15 degrees, with the stagnation on the rear tyre circled">
+          <figcaption>Figure 9. Pressure coefficient for side-wing floor angles of 5°, 10° and 15°. At 15° the stagnation on the rear tyre (circled) disappears and the flaps load up (thesis Fig. 105).</figcaption>
+        </figure>
+      </section>
+
+      <!-- 06 -->
+      <section id="results">
+        <h2><span class="cs-num">06</span>Results</h2>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Results summary">
+          <table class="cs-table cs-table--wide">
+            <thead>
+              <tr><th scope="col">Configuration</th><th scope="col" class="num">CLA [m²]</th><th scope="col" class="num">CDA [m²]</th><th scope="col" class="num">CL/CD [–]</th><th scope="col" class="num">CoP [% front]</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">EM03 package</th><td class="num">−0.066</td><td class="num">0.245</td><td class="num">−0.269</td><td class="num">22</td></tr>
+              <tr><th scope="row">EM05 target</th><td class="num">−0.329</td><td class="num">0.271</td><td class="num">−1.215</td><td class="num">40–49</td></tr>
+              <tr><th scope="row">EM05 first iteration</th><td class="num">−0.038</td><td class="num">0.273</td><td class="num">−0.139</td><td class="num">43</td></tr>
+              <tr class="cs-row-strong"><th scope="row">EM05 final</th><td class="num">−0.290</td><td class="num">0.300</td><td class="num">−0.970</td><td class="num">41</td></tr>
+              <tr><th scope="row">Final vs EM03</th><td class="num">+339.39&nbsp;%</td><td class="num">+22.45&nbsp;%</td><td class="num">+260.59&nbsp;%</td><td class="num">+19 points</td></tr>
+              <tr><th scope="row">Final vs target</th><td class="num">−11.85&nbsp;%</td><td class="num">+10.70&nbsp;%</td><td class="num">79.84&nbsp;% of target</td><td class="num">In range</td></tr>
+            </tbody>
+            <caption>CLA and CDA referenced to the 0.834&nbsp;m² frontal area. Source: thesis Table 33.</caption>
+          </table>
+        </div>
+        <p>
+          The final package fell short of the downforce and efficiency targets and exceeded the drag target by 10.70&nbsp;%. It did put the centre of pressure inside the 40–49&nbsp;% window, mainly through the nose redesign. The underbody remained the main downforce generator, and replacing the sidepods with side wings was one of the largest contributors to the overall gain.
+        </p>
+
+        <h3>Lap-time and points estimate</h3>
+        <p>
+          I ran the EM03 OptimumLap model on the FS Austria endurance track twice, changing only the lift and drag coefficients. Within the software's ±10&nbsp;% margin, the EM05 package is worth 0.243 to 0.297&nbsp;s per lap, or 4.1 to 5.0&nbsp;s over the 17 laps of the 22&nbsp;km endurance. The difference shows mostly in high-speed corners. Using the FSG endurance scoring formula with no penalties, that is worth 2.11 to 2.58 points out of 250:
+        </p>
+        <div class="cs-eq">\[ \text{Endurance score} = 0.9\,P_{max}\,\frac{T_{max}/T_{team} - 1}{0.333} + 0.1\,P_{max}, \qquad T_{max} = 1.333\,T_{fastest} \]</div>
+      </section>
+
+      <!-- 07 -->
+      <section id="validation">
+        <h2><span class="cs-num">07</span>Validation</h2>
+
+        <h3>Convergence</h3>
+        <p>
+          I judged convergence on three criteria: residuals, force monitors and flow patterns. AcuSolve reports an L1-norm residual, so I set a 10<sup>−2.5</sup> target, roughly equivalent to the usual 10<sup>−3</sup> in L2 terms. With a relaxation factor of 0.6 the downforce history oscillated. Reducing it to 0.25 smoothed the history, and downforce stabilised at about 130 of the 300 iterations.
+        </p>
+
+        <h3>Turbulence model</h3>
+        <p>
+          The literature review showed k-ω SST and realizable k-ε as the two models most used for Formula Student cars, with SST the more complete. I ran both on the EM03 for 300 iterations.
+        </p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Turbulence model comparison">
+          <table class="cs-table">
+            <thead>
+              <tr><th scope="col">Model</th><th scope="col" class="num">Elapsed [h]</th><th scope="col" class="num">CDA [m²]</th><th scope="col" class="num">CLA [m²]</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">k-ω SST</th><td class="num">4.72</td><td class="num">0.289</td><td class="num">−0.055</td></tr>
+              <tr><th scope="row">Realizable k-ε</th><td class="num">4.36</td><td class="num">0.265</td><td class="num">−0.066</td></tr>
+            </tbody>
+            <caption>Source: thesis Table 4.</caption>
+          </table>
+        </div>
+        <p>
+          Neither model brought the turbulent kinetic energy residual below tolerance in 300 iterations. Realizable k-ε was 7.63&nbsp;% faster, a saving that matters more as the mesh grows. With time as the main constraint I chose k-ε, accepting lower model fidelity in exchange for more design iterations. The two models disagree by about 9&nbsp;% on drag, which bounds how far the absolute coefficients can be trusted.
+        </p>
+
+        <h3>Wall resolution (y+)</h3>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="y-plus study">
+          <table class="cs-table cs-table--wide">
+            <thead>
+              <tr><th scope="col" class="num">Target y+</th><th scope="col" class="num">Layers</th><th scope="col" class="num">Growth</th><th scope="col" class="num">Nodes</th><th scope="col" class="num">Elapsed [h]</th><th scope="col" class="num">Mean output y+</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="num">1</td><td class="num">25</td><td class="num">1.26</td><td class="num">1.068 M</td><td class="num">2.68</td><td class="num">1.73</td></tr>
+              <tr><td class="num">0.75</td><td class="num">25</td><td class="num">1.27</td><td class="num">1.086 M</td><td class="num">2.63</td><td class="num">1.30</td></tr>
+              <tr class="cs-row-strong"><td class="num">0.5</td><td class="num">25</td><td class="num">1.30</td><td class="num">1.072 M</td><td class="num">2.85</td><td class="num">0.89</td></tr>
+            </tbody>
+            <caption>Source: thesis Table 9. A 0.25 target needed 28 layers and 3.89&nbsp;h per run, so 0.5 was kept.</caption>
+          </table>
+        </div>
+        <p>
+          Computational cost only rose noticeably when the number of layers increased, but layers were needed to keep the growth ratio inside the recommended 1.05–1.3 range. With a 0.5 target the whole car sits inside the viscous sublayer (y+ &lt; 5) and the main downforce surfaces are fully resolved (y+ &lt; 1). For the hand-calculated y+ = 1 set-up, the prism-layer height measured in the mesh matched δ<sub>99</sub> within acceptable accuracy.
+        </p>
+        <figure class="cs-fig cs-fig--narrow">
+          <img src="../images/projects/aero-design/em05-yplus.webp" width="1131" height="570" loading="lazy" decoding="async" alt="Isometric view of the car coloured by surface y-plus, mostly blue and green with a colour scale from 0.04 to 3.7">
+          <figcaption>Figure 10. Surface y+ with the scale set to its range, 0.043 to 3.7 (thesis Fig. 32).</figcaption>
+        </figure>
+
+        <h3>Mesh sensitivity</h3>
+        <p>
+          I refined the mesh from about 1 million to about 10 million nodes and tracked the change in each coefficient relative to the previous refinement:
+        </p>
+        <div class="cs-eq">\[ \varepsilon_r = \left|\frac{C_r - C_{r-1}}{C_0}\right| \times 100\,\% \]</div>
+        <p>
+          The lift error fell overall but rose again between 8 and 10 million nodes, and the drag error showed no clear trend. The solution is therefore not mesh-independent. A 10-million-node run took about 53&nbsp;h on the laptop, so I selected the ≈ 5.7-million-node mesh (≈ 10&nbsp;h per run) as the finest a 44-iteration programme could afford, and used it for every design comparison. At that mesh, about 0.1&nbsp;% of elements failed the equiangle-skewness threshold and about 0.6&nbsp;% failed the volumetric-skewness threshold.
+        </p>
+        <div class="cs-fig-pair">
+          <figure class="cs-fig">
+            <img src="../images/projects/aero-design/em05-mesh-cl-error.webp" width="1200" height="686" loading="lazy" decoding="async" alt="Line chart of lift coefficient relative error in percent against number of nodes from 1 to 10 million, falling from about 570 percent to about 75 percent and rising again to about 150 percent at the finest mesh">
+            <figcaption>Figure 11. Lift-coefficient relative error against node count (thesis Fig. 34).</figcaption>
+          </figure>
+          <figure class="cs-fig">
+            <img src="../images/projects/aero-design/em05-mesh-time.webp" width="1200" height="678" loading="lazy" decoding="async" alt="Line chart of simulation elapsed time in hours against number of nodes, rising from about 4 hours at 1 million nodes to about 51 hours near 10 million">
+            <figcaption>Figure 12. Elapsed time per simulation against node count on the laptop (thesis Fig. 36).</figcaption>
+          </figure>
+        </div>
+
+        <div class="cs-callout">
+          <p>The results are CFD-only. Correlation with wind-tunnel or on-track measurements was not part of the project, so the coefficients are best read as comparisons between designs on one fixed set-up, not as absolute values.</p>
+        </div>
+      </section>
+
+      <!-- 08 -->
+      <section id="limitations">
+        <h2><span class="cs-num">08</span>Limitations and next steps</h2>
+        <ul class="cs-list">
+          <li><strong>One operating point.</strong> Every run was straight-line at a constant speed and ride height. Ride height changes through a lap with aero load and track irregularities, so the next step is ride-height sensitivity curves and aero maps, aiming for a wide, smooth operating window rather than peak downforce.</li>
+          <li><strong>Mesh and model uncertainty.</strong> The mesh is not fully independent and the turbulence model was chosen for cost. A finer mesh and an SST run on the final design would bound the error on the absolute numbers.</li>
+          <li><strong>Manual post-processing.</strong> Extracting coefficients surface by surface was repetitive. A script that outputs the coefficients for every surface would free time for more designs.</li>
+          <li><strong>Underbody inlet.</strong> Wall shear stress shows recirculation at the outer part of the inlet. The 1&nbsp;mm minimum edge radius required by the rules was not modelled, and including it should reduce the separation.</li>
+          <li><strong>Side wing.</strong> Some of the front-tyre wake is still drawn in under the outermost section of the side wing, and the outer endplate sheds a strong tip vortex that adds drag. The vortex tunnel did not help in its first form but deserves more development.</li>
+          <li><strong>Project goals.</strong> Frame supply delays pushed the team's manufacturing start back. That gave more time for iteration but moved the thesis from the third to the fourth submission window, and only one design philosophy reached CAD instead of three.</li>
+        </ul>
+      </section>
+
+      <!-- 09 -->
+      <section id="role">
+        <h2><span class="cs-num">09</span>Role, team and tools</h2>
+        <p>
+          This was my individual BSc thesis, written while I led the reinstated aerodynamics department. I defined the CFD process, ran the 82 simulations, iterated the design and analysed the results. The chassis and CoG came from the Frame department, the radiator layout was studied with Mechanical Systems, and battery cooling was discussed with Electrical Systems. The alumni who designed the previous package reviewed the concepts, and the team's sponsors advised on composite design and processes for the manufacturing phase that followed.
+        </p>
+        <p>
+          <strong>Tools:</strong> Altair HyperMesh, Altair AcuSolve, OptimumLap, SolidWorks.
+        </p>
+        <p class="cs-sources">
+          Source: P. Lacasta Sauret, <em>Development of the aerodynamic package of a Formula Student vehicle</em>, BSc thesis, EUSS, 2025. All figures are reproduced from the thesis.
+        </p>
+      </section>
+
+      <nav class="cs-pager" aria-label="More projects">
+        <a href="../index.html#projects"><span>Back to</span>All projects</a>
+        <a href="aero-manufacturing.html" class="cs-pager-next"><span>Next project</span>Aerodynamic package manufacturing</a>
+      </nav>
     </article>
 
     <footer id="contact">
