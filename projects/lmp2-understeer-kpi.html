@@ -115,7 +115,7 @@
         <p>
           The corner radius comes from speed and lateral acceleration. The bicycle model gives the kinematic (Ackermann) steer angle needed to follow that radius, and the understeer angle is the difference between the steering input and that kinematic angle. Positive values mean understeer and negative values mean oversteer.
         </p>
-        <div class="cs-eq">\[ R = \frac{V^2}{a_y}, \qquad \delta_k = \arctan\frac{WB}{R} = \arctan\frac{WB\,a_y}{V^2}, \qquad \delta_u = \delta - \delta_k \]</div>
+        <div class="cs-eq">\[ \begin{gathered} R = \frac{V^2}{a_y} \\ \delta_k = \arctan\frac{WB}{R} = \arctan\frac{WB\,a_y}{V^2} \\ \delta_u = \delta - \delta_k \end{gathered} \]</div>
         <p class="cs-note">WB = 3.005&nbsp;m, the Oreca 07 wheelbase.</p>
         <figure class="cs-fig cs-fig--narrow">
           <img src="../images/projects/lmp2-kpi/bicycle-model.webp" width="518" height="562" loading="lazy" decoding="async" alt="Bicycle model diagram showing the wheelbase, the corner radius and the Ackermann steer angle at the front wheel">
