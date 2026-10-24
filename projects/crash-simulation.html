@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F7V2QDEPR3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F7V2QDEPR3');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explicit frontal crash simulation of a vehicle body - Pau Lacasta</title>
+  <meta name="description" content="Explicit finite-element frontal impact of a half vehicle body in Altair HyperMesh and Radioss at 10 and 20 m/s: shell meshing, elastic-plastic steel, stress, displacement, plastic strain and energy balance.">
+  <link rel="canonical" href="https://p-lacasta.github.io/projects/crash-simulation.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://p-lacasta.github.io/projects/crash-simulation.html">
+  <meta property="og:title" content="Explicit frontal crash simulation of a vehicle body - Pau Lacasta">
+  <meta property="og:description" content="Explicit finite-element frontal impact of a half vehicle body in Altair HyperMesh and Radioss at 10 and 20 m/s: shell meshing, elastic-plastic steel, stress, displacement, plastic strain and energy balance.">
+  <meta property="og:image" content="https://p-lacasta.github.io/images/projects/crash/stress-c1-front.webp">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header class="scrolled">
+    <div class="nav-container">
+      <a href="../index.html#hero" class="logo">Pau Lacasta</a>
+      <button id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav">
+        <a href="../index.html#hero">Home</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#competitions">Competitions</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="project-detail case-study">
+      <a href="../index.html#projects" class="back-link">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back to projects
+      </a>
+
+      <div class="project-detail-header">
+        <p class="cs-eyebrow">May 2024 · Vehicle Structural Design module, EUSS · Team of three</p>
+        <h1>Explicit frontal crash simulation of a vehicle body</h1>
+        <p class="cs-lede">
+          We meshed half of a car body as shells in Altair HyperMesh and ran explicit frontal impacts into a wall at 10 and 20&nbsp;m/s in Radioss, with an elastic-plastic high-strength steel. Doubling the speed nearly doubled the peak displacement and more than doubled the peak plastic strain, while peak stress barely moved.
+        </p>
+        <ul class="cs-chips" aria-label="Tools">
+          <li>Altair HyperMesh</li>
+          <li>Altair Radioss</li>
+        </ul>
+      </div>
+
+      <dl class="cs-meta">
+        <div>
+          <dt>Context</dt>
+          <dd>Practical 2 of the Vehicle Structural Design module, EUSS, May 2024</dd>
+        </div>
+        <div>
+          <dt>Team</dt>
+          <dd>Three students. This page describes the work as a team</dd>
+        </div>
+        <div>
+          <dt>Model</dt>
+          <dd>Half vehicle body, shell midsurfaces, 15&nbsp;mm elements</dd>
+        </div>
+        <div>
+          <dt>Cases</dt>
+          <dd>Frontal impact at 10&nbsp;m/s (36&nbsp;km/h) and 20&nbsp;m/s (72&nbsp;km/h)</dd>
+        </div>
+      </dl>
+
+      <img src="../images/projects/crash/stress-c1-front.webp" width="1088" height="504" alt="Front view of the car body coloured by von Mises stress after a 10 metre per second impact, with the highest stresses around the headlamp and radiator openings" class="project-detail-image">
+
+      <ul class="cs-keyfigs">
+        <li class="cs-keyfig">
+          <strong>87.5 → 164.6&nbsp;mm</strong>
+          <span>Peak displacement, 10 to 20&nbsp;m/s (+88.11&nbsp;%)</span>
+        </li>
+        <li class="cs-keyfig">
+          <strong>0.029 → 0.063</strong>
+          <span>Peak plastic strain, 10 to 20&nbsp;m/s (+117.59&nbsp;%)</span>
+        </li>
+        <li class="cs-keyfig">
+          <strong>440 → 448&nbsp;MPa</strong>
+          <span>Peak von Mises stress (+1.86&nbsp;%), against a 450&nbsp;MPa yield</span>
+        </li>
+        <li class="cs-keyfig">
+          <strong>≈ 2.5&nbsp;min</strong>
+          <span>Run time per case, 152 and 154&nbsp;s</span>
+        </li>
+      </ul>
+
+      <nav class="cs-toc" aria-label="On this page">
+        <p>On this page</p>
+        <ol>
+          <li><a href="#model">Model and mesh</a></li>
+          <li><a href="#results">Results</a></li>
+          <li><a href="#checks">Checks</a></li>
+          <li><a href="#limitations">Limitations and next steps</a></li>
+        </ol>
+      </nav>
+
+      <!-- 01 -->
+      <section id="model">
+        <h2><span class="cs-num">01</span>Model and mesh</h2>
+        <p>
+          The aim was to apply crash-structure theory with a non-linear material and to set up the boundary conditions of an explicit impact. To keep the model manageable we used half of the car and replaced each part's inner and outer faces with a single midsurface, removing the thickness from the geometry. We removed the side door, then stitched new surfaces across the gaps it left between parts, and added surfaces around the round rear-light openings so the quad mesh would not fail where it met them.
+        </p>
+        <p>
+          We meshed every part at 15&nbsp;mm, the smallest size the student licence's node limit allowed, then fixed warpage and minimum-length failures part by part by adjusting the edge seeding. One lesson cost us time: the first full mesh was built in the OptiStruct profile instead of Radioss, and it had to be converted before it would run.
+        </p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Material properties">
+          <table class="cs-table">
+            <thead>
+              <tr><th scope="col">High-strength cold-rolled steel</th><th scope="col" class="num">Value</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Density</th><td class="num">7,900&nbsp;kg/m³</td></tr>
+              <tr><th scope="row">Young's modulus</th><td class="num">200&nbsp;GPa</td></tr>
+              <tr><th scope="row">Poisson's ratio</th><td class="num">0.3</td></tr>
+              <tr><th scope="row">Yield strength</th><td class="num">450&nbsp;MPa</td></tr>
+              <tr><th scope="row">Ultimate strength</th><td class="num">780&nbsp;MPa</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figure class="cs-fig">
+          <img src="../images/projects/crash/mesh.webp" width="1200" height="667" loading="lazy" decoding="async" alt="Grey shell mesh of the half vehicle body with part labels">
+          <figcaption>Figure 1. Final shell mesh of the half body.</figcaption>
+        </figure>
+      </section>
+
+      <!-- 02 -->
+      <section id="results">
+        <h2><span class="cs-num">02</span>Results</h2>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Results comparison">
+          <table class="cs-table cs-table--stack">
+            <thead>
+              <tr><th scope="col">Quantity</th><th scope="col" class="num">10&nbsp;m/s</th><th scope="col" class="num">20&nbsp;m/s</th><th scope="col" class="num">Change</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Peak von Mises stress [MPa]</th><td class="num" data-label="10&nbsp;m/s">439.7</td><td class="num" data-label="20&nbsp;m/s">447.9</td><td class="num" data-label="Change">+1.86&nbsp;%</td></tr>
+              <tr><th scope="row">Peak displacement [mm]</th><td class="num" data-label="10&nbsp;m/s">87.5</td><td class="num" data-label="20&nbsp;m/s">164.6</td><td class="num" data-label="Change">+88.11&nbsp;%</td></tr>
+              <tr><th scope="row">Peak plastic strain [–]</th><td class="num" data-label="10&nbsp;m/s">0.029</td><td class="num" data-label="20&nbsp;m/s">0.0631</td><td class="num" data-label="Change">+117.59&nbsp;%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <ul class="cs-list">
+          <li><strong>Stress</strong> concentrates beside the headlamp openings, next to the radiator opening, where there is the least material to carry the load. At 20&nbsp;m/s the high-stress area grows, but the peak stays almost the same. The peak sits just below the 450&nbsp;MPa yield strength.</li>
+          <li><strong>Plastic strain</strong> is highest where the body meets the wall first, the regions absorbing the most energy. It more than doubles at the higher speed.</li>
+          <li><strong>Displacement</strong> is largest at the parts furthest from the wall, while the points that hit the wall first barely move.</li>
+        </ul>
+        <div class="cs-fig-pair">
+          <figure class="cs-fig">
+            <img src="../images/projects/crash/stress-c1-top.webp" width="1091" height="441" loading="lazy" decoding="async" alt="Top view of von Mises stress at 10 metres per second, with stress concentrated at the front corners">
+            <figcaption>Figure 2. Von Mises stress, 10&nbsp;m/s, top view [MPa].</figcaption>
+          </figure>
+          <figure class="cs-fig">
+            <img src="../images/projects/crash/strain-c2.webp" width="1159" height="460" loading="lazy" decoding="async" alt="Top view of plastic strain at 20 metres per second, concentrated at the very front of the body">
+            <figcaption>Figure 3. Plastic strain, 20&nbsp;m/s, top view.</figcaption>
+          </figure>
+        </div>
+        <figure class="cs-fig">
+          <img src="../images/projects/crash/disp-c1.webp" width="1048" height="469" loading="lazy" decoding="async" alt="Top view of displacement magnitude at 10 metres per second: almost the whole body red at about 87 millimetres, with lower values at the very front">
+          <figcaption>Figure 4. Displacement magnitude, 10&nbsp;m/s [mm].</figcaption>
+        </figure>
+      </section>
+
+      <!-- 03 -->
+      <section id="checks">
+        <h2><span class="cs-num">03</span>Checks</h2>
+        <p>
+          We checked the total energy balance in each case, the mesh for discontinuities between neighbouring elements, and the run times. Total energy stayed constant through both runs. One small discontinuity remained at the front of the car, caused by the part's design. Both cases ran in about two and a half minutes on the same mesh, so a finer mesh would have been affordable.
+        </p>
+        <figure class="cs-fig">
+          <img src="../images/projects/crash/energy-c1.webp" width="1200" height="500" loading="lazy" decoding="async" alt="Energy plot for the 10 metre per second case over 8 milliseconds: total energy flat at about 1.25 times ten to the seven newton millimetres, kinetic energy falling slightly and internal energy rising slightly">
+          <figcaption>Figure 5. Energy balance, 10&nbsp;m/s [N·mm]: internal (blue), kinetic (red), total (green).</figcaption>
+        </figure>
+      </section>
+
+      <!-- 04 -->
+      <section id="limitations">
+        <h2><span class="cs-num">04</span>Limitations and next steps</h2>
+        <ul class="cs-list">
+          <li><strong>Simulated duration.</strong> Both runs end at about 8&nbsp;ms, with most of the kinetic energy not yet absorbed. At 10&nbsp;m/s the car travels about 80&nbsp;mm in 8&nbsp;ms, close to the 87.5&nbsp;mm peak displacement, so the displacement plot mostly shows the body still moving rather than crush depth. The next run should continue until the kinetic energy is close to zero or the body rebounds.</li>
+          <li><strong>Mesh.</strong> 15&nbsp;mm elements were set by the licence limit, not by a convergence study. Refining the front structure, where the strain gradients are, is the obvious step given the short run times.</li>
+          <li><strong>Energy checks.</strong> A constant total energy is necessary but not enough. Hourglass and contact energy should also be tracked as fractions of the total to confirm the solution is physical.</li>
+          <li><strong>Stress averaging.</strong> The stress contours use simple nodal averaging, which smooths out element peaks. That is why the plotted peak sits just under yield while plastic strain is present. Element values should be checked against yield directly.</li>
+          <li><strong>Model simplifications.</strong> Removing the door and the thickness of each part changes the load paths and stiffness, so the results compare the two speeds rather than predict a real crash.</li>
+        </ul>
+        <p>
+          <strong>Tools:</strong> Altair HyperMesh (shell meshing), Altair Radioss (explicit solver).
+        </p>
+        <p class="cs-sources">
+          Source: <em>P2: Frontal impact analysis</em>, Vehicle Structural Design, EUSS, 9 May 2024.
+        </p>
+      </section>
+
+      <nav class="cs-pager" aria-label="More projects">
+        <a href="lmp2-understeer-kpi.html"><span>Previous project</span>Understeer-angle KPI from LMP2 data</a>
+        <a href="sand-casting.html" class="cs-pager-next"><span>Next project</span>Aluminium sand casting</a>
+      </nav>
+    </article>
+
+    <footer id="contact">
+      <div class="footer-inner">
+        <div class="footer-main reveal">
+          <h2>Let's connect!</h2>
+        </div>
+        <ul class="footer-links reveal">
+          <li>
+            <a href="mailto:p.lacasta.sauret@gmail.com" class="footer-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 5h18v14H3z" stroke-linejoin="round"/><path d="m3 6 9 7 9-7" stroke-linejoin="round"/></svg>
+              p.lacasta.sauret@gmail.com
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/pau-lacasta" target="_blank" rel="noopener" class="footer-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="8" y1="10" x2="8" y2="17"/><circle cx="8" cy="6.5" r="0.75" fill="currentColor" stroke="none"/><path d="M12 17v-4.5a2 2 0 0 1 4 0V17" stroke-linecap="round"/></svg>
+              LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Pau Lacasta. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+
+  <button id="to-top" aria-label="Back to top">↑</button>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

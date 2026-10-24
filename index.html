@@ -14,17 +14,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pau Lacasta - Engineering Portfolio</title>
   <meta name="description" content="Engineer focused on automotive development, aerodynamics, and engineering automation.">
+  <link rel="canonical" href="https://p-lacasta.github.io/">
 
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://pau-lacasta.github.io/">
+  <meta property="og:url" content="https://p-lacasta.github.io/">
   <meta property="og:title" content="Pau Lacasta - Engineering Portfolio">
   <meta property="og:description" content="Engineer focused on automotive development, aerodynamics, and engineering automation.">
-  <meta property="og:image" content="https://pau-lacasta.github.io/images/head/WhatsApp%20Image%202026-08-09%20at%2019.28.55.jpeg">
+  <meta property="og:image" content="https://p-lacasta.github.io/images/og-image.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Pau Lacasta - Engineering Portfolio">
   <meta name="twitter:description" content="Engineer focused on automotive development, aerodynamics, and engineering automation.">
-  <meta name="twitter:image" content="https://pau-lacasta.github.io/images/head/WhatsApp%20Image%202026-08-09%20at%2019.28.55.jpeg">
+  <meta name="twitter:image" content="https://p-lacasta.github.io/images/og-image.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,12 +60,13 @@
       <div class="hero-overlay"></div>
       <div class="hero-inner">
         <div class="hero-content">
-          <img src="images/profile.jpg" alt="Pau Lacasta profile image" class="hero-avatar">
+          <img src="images/profile.webp" width="320" height="320" alt="Pau Lacasta profile image" class="hero-avatar">
           <h1>Hi! I'm Pau Lacasta</h1>
           <p>
           Engineer in automotive development, aerodynamics,
-          and workflow automation delivering 260% aero gains,
-          95% CAD/CAE time‑savings, and AI‑accelerated design
+          and workflow automation, delivering a 260% gain in
+          aerodynamic efficiency over the EM03 package, 95%
+          CAD/CAE time‑savings, and AI‑accelerated design
           cycles. I build efficient, data‑driven engineering
           systems shaped by Formula Student leadership, CFD,
           structural analysis, and multi‑agent AI.
@@ -86,132 +88,195 @@
            <h3 class="about-subheading">Key achievements</h3>
            <ul class="about-achievements">
              <li>Rebuilding a Formula Student aerodynamics department from the ground up, establishing processes, tools and development roadmaps.</li>
-             <li>Improving aerodynamic efficiency by 260% through concept design, CFD development, and validation.</li>
+             <li>Improving aerodynamic efficiency (CL/CD) by 260% relative to the EM03 package through concept design and CFD-driven iteration.</li>
              <li>Achieving 95% time savings in CAD/CAE automation, significantly accelerating engineering cycles.</li>
-             <li>Collaborating in the development of an AI multi‑agent system that reduced the design‑to‑simulation loop from 4 weeks to 30 minutes.</li>
+             <li>Contributing to a multi‑agent AI system for SEAT body‑in‑white that can give a first manufacturability answer in 30 minutes instead of 4 weeks.</li>
            </ul>
 
            <p class="about-closing">
              I aim to contribute to high‑performance engineering projects where precision, innovation, and impact come together.
            </p>
          </div>
-         <img src="images/EM05_rollout.jpg" alt="EM05 Formula Student car rollout" class="about-image reveal">
+         <img src="images/EM05_rollout.webp" width="800" height="1422" loading="lazy" decoding="async" alt="EM05 Formula Student car rollout" class="about-image reveal">
        </div>
     </section>
 
     <section id="projects">
       <!-- Projects section content -->
        <h2 class="reveal">Projects</h2>
+
+       <!--ALL PROJECTS: newest first-->
        <div class="projects-grid">
+
+        <!--SEAT AGENTIC AI-->
+
+        <a class="project-card reveal" href="projects/seat-agentic-ai.html">
+          <img src="images/projects/seat-agentic-ai-illustration.webp" width="1200" height="675" loading="lazy" decoding="async" alt="Illustration of an engineer watching three AI agents assess a set of parts in front of a results screen (Synera)">
+          <h3>Agentic AI for body-in-white manufacturing feasibility</h3>
+          <p class="project-year">2025–26</p>
+          <p>
+            Contributed to a multi-agent system that can give SEAT body-in-white designers a first manufacturability answer in a potential 30 minutes instead of 4 weeks, built on Synera automation that saved over 95% of process time.
+          </p>
+          <p class="project-tools">Synera · Python · CATIA scripting</p>
+        </a>
+
+        <!--CFD TRAINING-->
+
+        <a class="project-card reveal" href="projects/cfd-training.html">
+          <img src="images/projects/cfd-training/cfd-training-card.webp" width="1182" height="707" loading="lazy" decoding="async" alt="Title slide of the Aerodynamics and CFD training course by Pau Lacasta, EUSS Motorsport season 2025–26, over a photo of the car at Circuit de Barcelona-Catalunya">
+          <h3>Aerodynamics and CFD training course</h3>
+          <p class="project-year">2025</p>
+          <p>
+            Wrote the course that takes new aerodynamics members through the full design loop, from meshing and convergence to lap-time simulation and aero maps. The team reused it the following season.
+          </p>
+          <p class="project-tools">Teaching · CFD process</p>
+        </a>
+
         <!--AERO MANUFACTURING-->
 
-        <article class="project-card reveal">
-          <img src="images/AeroManufacturing.png" alt="EM05 at Circuit de Barcelona-Catalunya">
+        <a class="project-card reveal" href="projects/aero-manufacturing.html">
+          <img src="images/AeroManufacturing.webp" width="1200" height="660" loading="lazy" decoding="async" alt="The EM05 Formula Student car with its carbon-fibre aerodynamic package, and five team members behind it">
           <h3>Manufacturing of the aerodynamic package of a Formula Student vehicle</h3>
           <p class="project-year">2025</p>
           <p>
-            Designed and produced the full aerodynamic package for a Formula Student car, building precision wood‑and‑foam molds and carbon‑fibre resin‑infusing components under vacuum to deliver lightweight, track‑ready performance.
+            Produced the full aerodynamic package for a Formula Student car, building wood‑and‑foam moulds and resin‑infusing the carbon‑fibre components under vacuum.
           </p>
           <p class="project-tools">SolidWorks · Fusion360</p>
-        </article>
+        </a>
 
         <!--AERO DESIGN-->
 
-        <article class="project-card reveal">
-          <img src="images/AeroDesign.png" alt="EM05 Aerodynamic package">
+        <a class="project-card reveal" href="projects/aero-design.html">
+          <img src="images/AeroDesign.webp" width="932" height="720" loading="lazy" decoding="async" alt="CAD render of the EM05 with its aerodynamic package: nosecone, underbody and side wings">
           <h3>Design of the aerodynamic package of a Formula Student vehicle</h3>
           <p class="project-year">2025</p>
           <p>
-            Led the aerodynamic package design for the EM‑04, iterating the nosecone, underbody and sidewings through CFD to achieve a 260% improvement in CL/CD over the previous car.
+            Designed the EM05 nosecone, underbody and side wings through 44 CFD iterations, raising CL/CD by 260.59% relative to the EM03 package and moving the centre of pressure from 22% to 41% front.
           </p>
-          <p class="project-tools">SolidWorks · Altair</p>
-        </article>
+          <p class="project-tools">Altair HyperMesh · AcuSolve</p>
+        </a>
+
+        <!--LMP1 CFD-->
+
+        <a class="project-card reveal" href="projects/lmp1-cfd.html">
+          <img src="images/projects/lmp1-cfd/lmp1-card.webp" width="581" height="349" loading="lazy" decoding="async" alt="Streamlines coloured by velocity around the LMP1-style prototype">
+          <h3>CFD analysis of an LMP1-style prototype</h3>
+          <p class="project-year">2025</p>
+          <p>
+            Full-car CFD at 250 km/h with moving ground and rotating wheels, in a team of three. The rear wing carried 798 N of downforce at a lift-to-drag ratio of 7.58, while the front wing's separated upper element made 190 N of lift.
+          </p>
+          <p class="project-tools">Altair HyperMesh · AcuSolve</p>
+        </a>
+
+        <!--LMP2 UNDERSTEER KPI-->
+
+        <a class="project-card reveal" href="projects/lmp2-understeer-kpi.html">
+          <img src="images/projects/lmp2-kpi/kpi-dashboard.webp" width="1171" height="1065" loading="lazy" decoding="async" alt="Excel KPI dashboard of understeer and oversteer through an LMP2 stint">
+          <h3>Understeer-angle KPI from LMP2 race data</h3>
+          <p class="project-year">2024</p>
+          <p>
+            Built an understeer-angle math channel in PI Toolbox from Oreca 07 outing data at Portimão, and an Excel dashboard that tracks the car's balance through a 26-lap stint.
+          </p>
+          <p class="project-tools">PI Toolbox · Excel</p>
+        </a>
+
+        <!--CRASH SIMULATION-->
+
+        <a class="project-card reveal" href="projects/crash-simulation.html">
+          <img src="images/projects/crash/stress-c1-front.webp" width="1088" height="504" loading="lazy" decoding="async" alt="Von Mises stress on the front of a car body after an explicit frontal impact">
+          <h3>Explicit frontal crash simulation of a vehicle body</h3>
+          <p class="project-year">2024</p>
+          <p>
+            Explicit impacts of a half car body at 10 and 20 m/s, in a team of three. Doubling the speed raised peak displacement by 88% and peak plastic strain by 118%, while peak stress stayed near yield.
+          </p>
+          <p class="project-tools">Altair HyperMesh · Radioss</p>
+        </a>
 
         <!--SAND CASTING-->
 
-        <article class="project-card reveal">
-          <img src="images/SandCasting.png" alt="Sand casting of a steering wheel render">
+        <a class="project-card reveal" href="projects/sand-casting.html">
+          <img src="images/SandCasting.webp" width="1200" height="927" loading="lazy" decoding="async" alt="Sand casting of a steering wheel render">
           <h3>Aluminium sand casting of a scaled steering wheel</h3>
           <p class="project-year">2024</p>
           <p>
             Sand‑cast a scaled steering wheel in aluminium, designing a two‑piece 3D‑printed pattern with risers and alignment features. A gas‑porosity defect in the final part revealed key venting insights.
           </p>
           <p class="project-tools">SolidWorks</p>
-        </article>
+        </a>
 
-        <!--HEAD RESTRAINT-->
-
-        <article class="project-card reveal">
-          <img src="images/HeadRestraing.png" alt="Formula Student head restraint render">
-          <h3>Design and manufacturing of a Formula Student head restraint</h3>
-          <p class="project-year">2024</p>
-          <p>
-            Redesigned and FE-validated the EM-04 head restraint under 890 N loads, comparing three variants. The final two-beam design achieved safety factors of 2.16 and 1.35, and was selected for manufacturing.
-          </p>
-          <p class="project-tools">SolidWorks</p>
-        </article>
-        
         <!--PUSHJACK-->
 
-        <article class="project-card reveal">
-          <img src="images/Pushjack.png" alt="Formula Student pushjack render">
+        <a class="project-card reveal" href="projects/pushjack.html">
+          <img src="images/Pushjack.webp" width="1200" height="960" loading="lazy" decoding="async" alt="Formula Student pushjack render">
           <h3>Design and manufacturing of a Formula Student pushjack</h3>
           <p class="project-year">2024</p>
           <p>
-            Redesigned the EM-04 push-bar and quick-jack into a combined mechanism, cutting material use and improving efficiency. After 14 iterations, achieved a 9.1 kg structure with a 1.2 safety factor.
+            Combined the EM-04 push-bar and quick-jack into one device. Across 14 logged versions and six concepts, reached a 9.1 kg steel structure with a safety factor of 1.2 at a 300 kg design load.
           </p>
           <p class="project-tools">SolidWorks</p>
-        </article>
+        </a>
+
+        <!--HEAD RESTRAINT-->
+
+        <a class="project-card reveal" href="projects/head-restraint.html">
+          <img src="images/HeadRestraint.webp" width="1200" height="960" loading="lazy" decoding="async" alt="Formula Student head restraint render">
+          <h3>Design and manufacturing of a Formula Student head restraint</h3>
+          <p class="project-year">2024</p>
+          <p>
+            Redesigned and FE-validated the EM-04 head restraint against the 890 N rule load, comparing three variants. The selected design reached safety factors of 2.16 (centre) and 1.35 (edge, worst case) and passed its scrutineering check at FS Spain 2024.
+          </p>
+          <p class="project-tools">SolidWorks</p>
+        </a>
+       </div>
+
+       <!--EARLY PROJECTS-->
+       <h3 class="projects-subheading reveal">Early projects</h3>
+       <div class="projects-grid projects-grid--compact">
 
         <!--SOLAR RC PLANE-->
 
-        <article class="project-card reveal">
-          <img src="images/SolarPlane.jpg" alt="Solar RC plane">
-          <h3>Construction of a solar-powered RC plane</h3>
-          <p class="project-year">2020</p>
-          <p>
-            Collaborated with two classmates to design and build a solar-powered RC plane for a school project, integrating solar cells with battery propulsion for an 11-minute flight, 115% longer than battery-only.
-          </p>
-          <p class="project-tools">SketchUp</p>
-        </article>
+        <a class="project-card reveal" href="projects/solar-plane.html">
+          <img src="images/SolarPlane.jpg" width="780" height="737" loading="lazy" decoding="async" alt="Solar RC plane">
+          <div>
+            <h3>Construction of a solar-powered RC plane</h3>
+            <p class="project-year">2020</p>
+          </div>
+        </a>
 
         <!--GRAVITY RACER-->
-        
-        <article class="project-card reveal">
-          <img src="images/GravityRacer.png" alt="Gravity race car">
-          <h3>Construction of a gravity powered race car</h3>
-          <p class="project-year">2018 </p>
-          <p>
-            Collaboratively built a gravity-powered race car with a wooden-board chassis and reused seat, featuring caster-wheel steering and a hand-lever brake, emphasizing teamwork and practical prototyping.
-          </p>
-        </article>
+
+        <a class="project-card reveal" href="projects/gravity-racer.html">
+          <img src="images/GravityRacer.webp" width="351" height="281" loading="lazy" decoding="async" alt="Gravity race car">
+          <div>
+            <h3>Construction of a gravity powered race car</h3>
+            <p class="project-year">2018</p>
+          </div>
+        </a>
 
         <!--F1 GAME-->
 
-        <article class="project-card reveal">
-          <img src="images/F1Game.jpg" alt="F1 Game icon">
-          <h3>Design of a F1 themed videogame</h3>
-          <p class="project-year">2017</p>
-          <p>
-            Built a functional F1 racing game while learning Scratch, implementing custom controls, car selection and circuit changes, an early exercise in programming logic, UX design and debugging.
-          </p>
-          <p class="project-tools">Scratch</p>
-        </article>
+        <a class="project-card reveal" href="projects/f1-game.html">
+          <img src="images/F1Game.webp" width="880" height="590" loading="lazy" decoding="async" alt="F1 Game icon">
+          <div>
+            <h3>Design of a F1 themed videogame</h3>
+            <p class="project-year">2017</p>
+          </div>
+        </a>
        </div>
     </section>
 
     <section id="competitions">
       <!-- Competitions section content -->
        <h2 class="reveal">Formula student competitions</h2>
-       
+
        <div class="projects-grid">
 
         <!--SPAIN 2025-->
 
         <article class="competition-card reveal">
-          <img src="images/FSS25.jpg" alt="EUSS Motorsport at Formula Student Spain 2025">
+          <img src="images/FSS25.webp" width="1200" height="675" loading="lazy" decoding="async" alt="EUSS Motorsport at Formula Student Spain 2025">
           <div class="competition-title">
-            <img src="images/FSS_logo.png" alt="Formula Student Spain logo" class="competition-logo">
+            <img src="images/FSS_logo.webp" width="300" height="76" loading="lazy" decoding="async" alt="Formula Student Spain logo" class="competition-logo">
             <h3>'25</h3>
           </div>
           <p>
@@ -232,9 +297,9 @@
         <!--PORTUGAL 2025-->
 
         <article class="competition-card reveal">
-          <img src="images/FSPT25.jpeg" alt="EUSS Motorsport at Formula Student Portugal 2025">
+          <img src="images/FSPT25.webp" width="1200" height="675" loading="lazy" decoding="async" alt="EUSS Motorsport at Formula Student Portugal 2025">
           <div class="competition-title">
-            <img src="images/FSPT_logo.png" alt="Formula Student Portugal logo" class="competition-logo">
+            <img src="images/FSPT_logo.webp" width="300" height="151" loading="lazy" decoding="async" alt="Formula Student Portugal logo" class="competition-logo">
             <h3>'25</h3>
           </div>
           <p>
@@ -259,9 +324,9 @@
         <!--SPAIN 2024-->
 
         <article class="competition-card reveal">
-          <img src="images/FSS24.jpg" alt="EUSS Motorsport at Formula Student Spain 2024">
+          <img src="images/FSS24.webp" width="1200" height="675" loading="lazy" decoding="async" alt="EUSS Motorsport at Formula Student Spain 2024">
           <div class="competition-title">
-            <img src="images/FSS_logo.png" alt="Formula Student Spain logo" class="competition-logo">
+            <img src="images/FSS_logo.webp" width="300" height="76" loading="lazy" decoding="async" alt="Formula Student Spain logo" class="competition-logo">
             <h3>'24</h3>
           </div>
           <p>
@@ -274,6 +339,27 @@
             </li>
           </ul>
         </article>
+       </div>
+
+       <!--2025 SEASON VIDEO + TEAM LINK-->
+
+       <div class="season-row">
+         <figure class="season-video reveal">
+           <video controls playsinline preload="none" width="320" height="568" poster="images/fs-2025-season-recap-poster.webp" aria-label="EUSS Motorsport 2025 season recap">
+             <source src="videos/fs-2025-season-recap.mp4" type="video/mp4">
+             <a href="videos/fs-2025-season-recap.mp4">Watch the 2025 season recap</a>
+           </video>
+           <figcaption>2025 season recap. Video created by Ariadna Alegre.</figcaption>
+         </figure>
+
+         <div class="team-card reveal">
+           <img src="images/em05-on-track.webp" width="1250" height="835" loading="lazy" decoding="async" alt="The EM05 Formula Student car driving through a coned course while spectators watch">
+           <a class="team-link" href="https://eussmotorsport.cat/en/index.html" target="_blank" rel="noopener">
+             EUSS Motorsport website
+             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+             <span class="visually-hidden">(opens in a new tab)</span>
+           </a>
+         </div>
        </div>
     </section>
 

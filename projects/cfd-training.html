@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F7V2QDEPR3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F7V2QDEPR3');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aerodynamics and CFD training course - Pau Lacasta</title>
+  <meta name="description" content="A training course I wrote for new EUSS Motorsport aerodynamics members, covering the full design loop: objectives, CAD and meshing, convergence, post-processing, lap-time simulation and aero maps. The team reused it the following season.">
+  <link rel="canonical" href="https://p-lacasta.github.io/projects/cfd-training.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://p-lacasta.github.io/projects/cfd-training.html">
+  <meta property="og:title" content="Aerodynamics and CFD training course - Pau Lacasta">
+  <meta property="og:description" content="A training course I wrote for new EUSS Motorsport aerodynamics members, covering the full design loop: objectives, CAD and meshing, convergence, post-processing, lap-time simulation and aero maps. The team reused it the following season.">
+  <meta property="og:image" content="https://p-lacasta.github.io/images/projects/cfd-training/process.webp">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header class="scrolled">
+    <div class="nav-container">
+      <a href="../index.html#hero" class="logo">Pau Lacasta</a>
+      <button id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav">
+        <a href="../index.html#hero">Home</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#competitions">Competitions</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="project-detail case-study">
+      <a href="../index.html#projects" class="back-link">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back to projects
+      </a>
+
+      <div class="project-detail-header">
+        <p class="cs-eyebrow">October 2025 · EUSS Motorsport · Aerodynamics department · Training material</p>
+        <h1>Aerodynamics and CFD training course</h1>
+        <p class="cs-lede">
+          I wrote a course to take new aerodynamics members through the team's whole design loop: setting objectives, CAD and meshing, running and converging a simulation, post-processing, lap-time simulation and aero maps. It builds on what I learned designing the EM05 package, and the team reused it to train the next intake the following season.
+        </p>
+        <ul class="cs-chips" aria-label="Topics">
+          <li>CFD process</li>
+          <li>Meshing and y+</li>
+          <li>Convergence</li>
+          <li>Lap-time simulation</li>
+          <li>Aero maps</li>
+        </ul>
+      </div>
+
+      <dl class="cs-meta">
+        <div>
+          <dt>My role</dt>
+          <dd>Author of the course and slides</dd>
+        </div>
+        <div>
+          <dt>Audience</dt>
+          <dd>New members of the EUSS Motorsport aerodynamics department</dd>
+        </div>
+        <div>
+          <dt>Format</dt>
+          <dd>25-slide session in six stages, using the team's own simulations as examples</dd>
+        </div>
+        <div>
+          <dt>Reuse</dt>
+          <dd>First given in October 2025, then delivered again by another team member to the following season's intake</dd>
+        </div>
+      </dl>
+
+      <img src="../images/projects/cfd-training/process.webp" width="1400" height="787" alt="Course slide showing the six-stage aerodynamic design process: objectives, CAD and meshing, simulation, post-processing, lap-time simulation and aero maps" class="project-detail-image">
+
+      <nav class="cs-toc" aria-label="On this page">
+        <p>On this page</p>
+        <ol>
+          <li><a href="#why">Why a course</a></li>
+          <li><a href="#content">What it covers</a></li>
+          <li><a href="#principles">Principles</a></li>
+        </ol>
+      </nav>
+
+      <!-- 01 -->
+      <section id="why">
+        <h2><span class="cs-num">01</span>Why a course</h2>
+        <p>
+          When the aerodynamics department was reinstated for the EM05, a generational change had left the team with little aerodynamics knowledge, and much of what I learned designing the package lived in my thesis. The course turns that into a process new members can follow, so each season's design does not start from zero.
+        </p>
+      </section>
+
+      <!-- 02 -->
+      <section id="content">
+        <h2><span class="cs-num">02</span>What it covers</h2>
+        <ol class="cs-steps">
+          <li><strong>Objectives.</strong> Setting targets as percentage changes for each component, illustrated with the EM05 nosecone study (low nose: full-car downforce +16.48&nbsp;%).</li>
+          <li><strong>CAD and meshing.</strong> Element counts and what they cost: about 10 million elements and 20&nbsp;h per run for the EM06, against roughly 70 million for a typical Formula Student team and 150 million in about 4&nbsp;h for F1. Mesh sensitivity, and what each y+ band means: below 1 for full resolution, 1–5 acceptable, 5–30 the buffer layer to avoid, and above 30 the log-law region modelled with wall functions.</li>
+          <li><strong>Simulation.</strong> Judging convergence on residuals, monitors and flow patterns. For AcuSolve residuals the course gives a rule of thumb: 10<sup>−1.5</sup> is "just a pretty picture", 10<sup>−2.5</sup> is a reliable result, and 10<sup>−3</sup> is more than the job needs. It also shows how lowering the relaxation factor smooths the monitors.</li>
+          <li><strong>Post-processing.</strong> The difference between Cl/Cd and CLA/CDA and why the reference area matters, then pressure coefficient, total pressure coefficient (energy loss with and without separation), CpT&nbsp;=&nbsp;0 iso-surfaces and streamlines.</li>
+          <li><strong>Lap-time simulation.</strong> Feeding Cl, Cd and mass into OptimumLap or ChassisSim to turn coefficients into lap time and points. The EM05 example: about 0.25&nbsp;s per lap and 2.5 endurance points relative to the previous package.</li>
+          <li><strong>Aero maps.</strong> Front, rear and total downforce and drag maps, plus simulation in cornering conditions. My thesis had listed aero maps and more operating conditions as the next steps beyond straight-line runs.</li>
+        </ol>
+        <div class="cs-fig-pair">
+          <figure class="cs-fig">
+            <img src="../images/projects/cfd-training/yplus.webp" width="1400" height="787" loading="lazy" decoding="async" alt="Course slide explaining y-plus bands with velocity-profile sketches and a y-plus contour on the car">
+            <figcaption>Figure 1. y+ and wall treatment.</figcaption>
+          </figure>
+          <figure class="cs-fig">
+            <img src="../images/projects/cfd-training/convergence.webp" width="1400" height="787" loading="lazy" decoding="async" alt="Course slide on convergence with a residual-ratio plot and residual targets annotated">
+            <figcaption>Figure 2. Convergence: residual targets.</figcaption>
+          </figure>
+          <figure class="cs-fig">
+            <img src="../images/projects/cfd-training/laptime.webp" width="1400" height="787" loading="lazy" decoding="async" alt="Course slide showing Cl, Cd and mass feeding into lap-time simulation software, with the EM05 lap-time and endurance-points gains">
+            <figcaption>Figure 3. Lap-time simulation.</figcaption>
+          </figure>
+          <figure class="cs-fig">
+            <img src="../images/projects/cfd-training/aeromaps.webp" width="1400" height="787" loading="lazy" decoding="async" alt="Course slide with front, rear and total downforce and drag maps against ride height, and a cornering simulation plot">
+            <figcaption>Figure 4. Aero maps and cornering.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- 03 -->
+      <section id="principles">
+        <h2><span class="cs-num">03</span>Principles</h2>
+        <p>
+          The course closes on three principles I wanted the department to keep:
+        </p>
+        <ul class="cs-list">
+          <li>The goal is to train engineers, not to build a pretty car.</li>
+          <li>Don't copy F1 or other teams. Decide with your own data.</li>
+          <li>It is fine not to know something, as long as you know that you don't know it.</li>
+        </ul>
+        <p class="cs-sources">
+          Source: my course slides, <em>Formación Aerodinámica y CFD</em>, EUSS Motorsport (version reused for the 2026–27 intake).
+        </p>
+      </section>
+
+      <nav class="cs-pager" aria-label="More projects">
+        <a href="seat-agentic-ai.html"><span>Previous project</span>Agentic AI for body-in-white feasibility</a>
+        <a href="aero-manufacturing.html" class="cs-pager-next"><span>Next project</span>EM05 aerodynamic package manufacturing</a>
+      </nav>
+    </article>
+
+    <footer id="contact">
+      <div class="footer-inner">
+        <div class="footer-main reveal">
+          <h2>Let's connect!</h2>
+        </div>
+        <ul class="footer-links reveal">
+          <li>
+            <a href="mailto:p.lacasta.sauret@gmail.com" class="footer-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 5h18v14H3z" stroke-linejoin="round"/><path d="m3 6 9 7 9-7" stroke-linejoin="round"/></svg>
+              p.lacasta.sauret@gmail.com
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/pau-lacasta" target="_blank" rel="noopener" class="footer-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="8" y1="10" x2="8" y2="17"/><circle cx="8" cy="6.5" r="0.75" fill="currentColor" stroke="none"/><path d="M12 17v-4.5a2 2 0 0 1 4 0V17" stroke-linecap="round"/></svg>
+              LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Pau Lacasta. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+
+  <button id="to-top" aria-label="Back to top">↑</button>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

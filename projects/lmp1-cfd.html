@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F7V2QDEPR3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F7V2QDEPR3');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CFD analysis of an LMP1-style prototype - Pau Lacasta</title>
+  <meta name="description" content="Full-car CFD of an LMP1-style prototype at 250 km/h in Altair HyperMesh and AcuSolve with moving ground and rotating wheels, broken down device by device: front wing, rear wing, diffuser, strakes and wheels.">
+  <link rel="canonical" href="https://p-lacasta.github.io/projects/lmp1-cfd.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://p-lacasta.github.io/projects/lmp1-cfd.html">
+  <meta property="og:title" content="CFD analysis of an LMP1-style prototype - Pau Lacasta">
+  <meta property="og:description" content="Full-car CFD of an LMP1-style prototype at 250 km/h in Altair HyperMesh and AcuSolve with moving ground and rotating wheels, broken down device by device: front wing, rear wing, diffuser, strakes and wheels.">
+  <meta property="og:image" content="https://p-lacasta.github.io/images/projects/lmp1-cfd/lmp1-model.webp">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <!-- KaTeX renders the equations on this page -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+    onload="renderMathInElement(document.querySelector('.case-study'), {delimiters: [{left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}], throwOnError: false});"></script>
+</head>
+<body>
+  <header class="scrolled">
+    <div class="nav-container">
+      <a href="../index.html#hero" class="logo">Pau Lacasta</a>
+      <button id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav">
+        <a href="../index.html#hero">Home</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#competitions">Competitions</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="project-detail case-study">
+      <a href="../index.html#projects" class="back-link">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back to projects
+      </a>
+
+      <div class="project-detail-header">
+        <p class="cs-eyebrow">January 2025 · Motorsport Aerodynamics module, EUSS · Team of three</p>
+        <h1>CFD analysis of an LMP1-style prototype</h1>
+        <p class="cs-lede">
+          We set up and ran a full-car CFD study of an LMP1-style prototype at 250&nbsp;km/h in Altair HyperMesh and AcuSolve, with a moving ground and rotating wheels, and broke the result down device by device. The rear wing carried the car's downforce at a lift-to-drag ratio of 7.58, while the front wing made 190&nbsp;N of lift instead of downforce and the diffuser was too steep to keep its flow attached.
+        </p>
+        <ul class="cs-chips" aria-label="Tools">
+          <li>Altair HyperMesh CFD</li>
+          <li>Altair AcuSolve</li>
+          <li>SolidWorks</li>
+        </ul>
+      </div>
+
+      <dl class="cs-meta">
+        <div>
+          <dt>Context</dt>
+          <dd>Final practical of the Motorsport Aerodynamics module (Aerodinámica de Competición), EUSS</dd>
+        </div>
+        <div>
+          <dt>Team</dt>
+          <dd>Three students. This page describes the work as a team</dd>
+        </div>
+        <div>
+          <dt>Model</dt>
+          <dd>Fan-art LMP1 from GrabCAD, 4.65&nbsp;m long, 1.906&nbsp;m wide, 0.876&nbsp;m high. Not a real car</dd>
+        </div>
+        <div>
+          <dt>Mesh</dt>
+          <dd>1.92 million nodes, wall-function prism layers, run on 20 processors</dd>
+        </div>
+      </dl>
+
+      <img src="../images/projects/lmp1-cfd/lmp1-model.webp" width="1200" height="697" alt="Render of the LMP1-style prototype used in the study, white and blue bodywork with a two-element rear wing, shark fin and enclosed wheels" class="project-detail-image">
+
+      <ul class="cs-keyfigs">
+        <li class="cs-keyfig">
+          <strong>798&nbsp;N</strong>
+          <span>Rear-wing downforce at 250&nbsp;km/h, for 105&nbsp;N of drag (L/D 7.58)</span>
+        </li>
+        <li class="cs-keyfig">
+          <strong>+190&nbsp;N</strong>
+          <span>Front-wing lift, caused by separation on the upper element</span>
+        </li>
+        <li class="cs-keyfig">
+          <strong>22.3&nbsp;×&nbsp;10<sup>6</sup></strong>
+          <span>Reynolds number on the 4.65&nbsp;m car length, Mach 0.202</span>
+        </li>
+        <li class="cs-keyfig">
+          <strong>y+ 39</strong>
+          <span>Mean surface y+ for a target of 30, inside the log-law region</span>
+        </li>
+      </ul>
+
+      <nav class="cs-toc" aria-label="On this page">
+        <p>On this page</p>
+        <ol>
+          <li><a href="#scope">Scope and model</a></li>
+          <li><a href="#setup">Set-up and mesh</a></li>
+          <li><a href="#convergence">Convergence checks</a></li>
+          <li><a href="#devices">Results by device</a></li>
+          <li><a href="#limitations">Limitations and next steps</a></li>
+          <li><a href="#role">Team and tools</a></li>
+        </ol>
+      </nav>
+
+      <!-- 01 -->
+      <section id="scope">
+        <h2><span class="cs-num">01</span>Scope and model</h2>
+        <p>
+          The brief was to pick a competition car, prepare and validate its geometry, set up a CFD case we could justify parameter by parameter, and evaluate its aerodynamic devices. We chose an LMP1-style model from GrabCAD. It is fan art rather than a real car, so it may not follow any specific year's technical regulations, but it has a ground-effect floor, a diffuser with strakes, two-element front and rear wings and internal ducts, and few small details to complicate validation.
+        </p>
+        <h3>Geometry preparation</h3>
+        <ul class="cs-list">
+          <li>Cut the tyres 15&nbsp;mm at the contact patch so they meet the ground with a realistic footprint.</li>
+          <li>Replaced the detailed rims, the main source of validation errors, with flat discs, and rounded the rear wheel fairing.</li>
+          <li>Repaired the remaining surface and solid errors with HyperMesh's automatic tools.</li>
+          <li>Kept the three internal ducts (over the nose, on the roof and on the side) open on purpose, because they have a large effect on the forces we wanted to evaluate.</li>
+          <li>Split the surfaces into groups (front wing, rear wing, diffuser wing, wheels, shark fin, chassis, internal channels) so forces could be integrated per device.</li>
+        </ul>
+      </section>
+
+      <!-- 02 -->
+      <section id="setup">
+        <h2><span class="cs-num">02</span>Set-up and mesh</h2>
+        <p>
+          We ran at 250&nbsp;km/h (69.44&nbsp;m/s), a representative race speed for the category. At Mach 0.202 the flow can be treated as incompressible, and the Reynolds number on the car length is well into the turbulent range:
+        </p>
+        <div class="cs-eq">\[ \mathrm{Re} = \frac{\rho U L}{\mu} = \frac{1.225 \times 69.44 \times 4.65}{1.77\times10^{-5}} = 22.34\times10^{6} \]</div>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="CFD set-up">
+          <table class="cs-table">
+            <thead>
+              <tr><th scope="col">Item</th><th scope="col">Setting</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Software</th><td>Altair HyperMesh CFD (pre-processing), AcuSolve (solver)</td></tr>
+              <tr><th scope="row">Boundary conditions</th><td>Inlet 250&nbsp;km/h, moving ground, rotating wheels</td></tr>
+              <tr><th scope="row">Solver</th><td>Steady, incompressible, k-ω SST</td></tr>
+              <tr><th scope="row">Domain</th><td>13.25&nbsp;m upstream (2.85&nbsp;L), 53.5&nbsp;m downstream (11.5&nbsp;L), 15.6&nbsp;×&nbsp;15.6&nbsp;m section. Proportions scaled from our earlier Ahmed-body practical</td></tr>
+              <tr><th scope="row">Refinement</th><td>Geometry box 1.5&nbsp;×&nbsp;1.5&nbsp;×&nbsp;5.5&nbsp;m, wake box 5&nbsp;×&nbsp;5&nbsp;×&nbsp;40&nbsp;m. Finer surface mesh on the thin support structure</td></tr>
+              <tr><th scope="row">Prism layers</th><td>Target y+ 30, 14 layers, growth ratio 1.28</td></tr>
+              <tr><th scope="row">Mesh size</th><td>1,922,137 nodes</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          We chose k-ω SST because it handles adverse pressure gradients and separation well, accepting that it is weaker in stagnation regions. For a blunt body like this we targeted the log-law region (y+ &gt; 30) with wall functions rather than resolving the viscous sublayer. The first-cell height came from a y+ calculator, and the prism stack was sized to contain the turbulent boundary layer:
+        </p>
+        <div class="cs-eq">\[ \delta_{99} = \frac{0.38\,L}{\mathrm{Re}_L^{1/5}} = 0.0598\ \mathrm{m}, \qquad \delta_{99} = y_H\,\frac{1-G^{N}}{1-G} \]</div>
+        <p>
+          Fourteen layers was the smallest count that kept the growth ratio inside the recommended 1.05–1.3 range, giving G = 1.28.
+        </p>
+        <figure class="cs-fig">
+          <img src="../images/projects/lmp1-cfd/lmp1-mesh-bl.webp" width="1200" height="573" loading="lazy" decoding="async" alt="Section through the volume mesh showing the prism layers on the bodywork transitioning smoothly into the tetrahedral free-stream mesh">
+          <figcaption>Figure 1. Prism-layer transition into the volume mesh.</figcaption>
+        </figure>
+      </section>
+
+      <!-- 03 -->
+      <section id="convergence">
+        <h2><span class="cs-num">03</span>Convergence checks</h2>
+        <p>
+          We judged convergence on residuals, force monitors and flow patterns. The solution ratios settled, with pressure oscillating around a stable mean, residuals stayed below 10<sup>−3</sup>, and the monitors held constant over the final steps.
+        </p>
+        <p>
+          The flow-pattern check raised one question. On the symmetry plane there was no clear stagnation point at the nose, which we would expect on any blunt body. The cause was the internal channel inlet on the centreline: air flows into the duct instead of stagnating. Elsewhere the flow behaved as expected, accelerating over convex surfaces such as the nose and windscreen, with local separation and reattachment at sharp changes in geometry.
+        </p>
+        <figure class="cs-fig">
+          <img src="../images/projects/lmp1-cfd/lmp1-velocity.webp" width="1200" height="514" loading="lazy" decoding="async" alt="Velocity contour on the symmetry plane around the car, with accelerated flow over the nose and windscreen and a slow wake behind the car">
+          <figcaption>Figure 2. Velocity on the symmetry plane [m/s].</figcaption>
+        </figure>
+        <figure class="cs-fig cs-fig--narrow">
+          <img src="../images/projects/lmp1-cfd/lmp1-yplus.webp" width="1200" height="765" loading="lazy" decoding="async" alt="Isometric view of the car coloured by surface y-plus on a 0 to 30 scale, with most of the body at or above 30">
+          <figcaption>Figure 3. Surface y+ on a 0–30 scale. Mean 39, so most of the car sits in the log-law region the wall functions need.</figcaption>
+        </figure>
+      </section>
+
+      <!-- 04 -->
+      <section id="devices">
+        <h2><span class="cs-num">04</span>Results by device</h2>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Forces by device">
+          <table class="cs-table cs-table--wide">
+            <thead>
+              <tr><th scope="col">Device</th><th scope="col" class="num">Drag [N]</th><th scope="col" class="num">Vertical force [N]</th><th scope="col">Finding</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Rear wing</th><td class="num">105.32</td><td class="num">798.34 down</td><td>Main downforce source, L/D 7.58. Lower element separated, upper element attached</td></tr>
+              <tr><th scope="row">Front wing</th><td class="num">18.30</td><td class="num">190.24 up</td><td>Separation under the upper element removes the pressure difference</td></tr>
+              <tr><th scope="row">Diffuser wing</th><td class="num">3.35</td><td class="num">2.80 down</td><td>More drag than downforce, and it starves the diffuser of flow</td></tr>
+              <tr><th scope="row">Front wheel</th><td class="num">1.51</td><td class="num">27.49 up</td><td>Wake exits the upper vent and runs along the car</td></tr>
+              <tr><th scope="row">Rear wheel</th><td class="num">1.39</td><td class="num">16.98 up</td><td>Fairing and vents give slightly lower drag than at the front</td></tr>
+            </tbody>
+            <caption>Forces integrated per surface group at 250&nbsp;km/h.</caption>
+          </table>
+        </div>
+
+        <h3>Internal channels and roof intake</h3>
+        <p>
+          The roof intake and the outlet of the nose channel both caused separation where the bodywork changes slope suddenly, with the flow reattaching shortly afterwards. The pressure plot on the symmetry plane showed higher pressure inside the nose channel than outside it, so the channel produced lift, the opposite of its purpose.
+        </p>
+        <figure class="cs-fig">
+          <img src="../images/projects/lmp1-cfd/lmp1-channel-cp.webp" width="1200" height="763" loading="lazy" decoding="async" alt="Pressure coefficient contour at the front of the car showing higher pressure inside the nose channel than on the surface above it">
+          <figcaption>Figure 4. Pressure coefficient at the front of the car. Pressure inside the nose channel exceeds the pressure above it.</figcaption>
+        </figure>
+
+        <h3>Front wing</h3>
+        <p>
+          The front wing has two elements stacked one above the other. Total pressure showed a separated region on the lower surface of the upper element, and with it gone there was almost no pressure difference across the profiles. The integrated force confirmed it: 190&nbsp;N of lift for 18&nbsp;N of drag. We proposed arranging the two elements as a cascade with more suitable profiles so they contribute downforce.
+        </p>
+        <figure class="cs-fig cs-fig--narrow">
+          <img src="../images/projects/lmp1-cfd/lmp1-frontwing-cpt.webp" width="1071" height="648" loading="lazy" decoding="async" alt="Total pressure coefficient around the two stacked front-wing elements, with a low-energy blue region under the upper element">
+          <figcaption>Figure 5. Total pressure coefficient around the front wing. The low-energy region under the upper element is the separation.</figcaption>
+        </figure>
+
+        <h3>Rear wing</h3>
+        <p>
+          The rear wing worked as intended. Low pressure on the suction side gave 798&nbsp;N of downforce for 105&nbsp;N of drag. The streamlines were mostly uniform, with a tip vortex at the endplate. We traced it with velocity-vector slices 0.5&nbsp;m ahead of the trailing edge, at it and 0.5&nbsp;m behind it. Ahead of the wing the flow is uniform. At the trailing edge the vectors gain strong lateral and vertical components. Half a metre downstream the flow has largely settled. Total pressure showed the lower element running separated while the upper element stays attached along its chord.
+        </p>
+        <div class="cs-fig-pair">
+          <figure class="cs-fig">
+            <img src="../images/projects/lmp1-cfd/lmp1-rearwing-cp.webp" width="888" height="342" loading="lazy" decoding="async" alt="Pressure coefficient around the rear wing section with a large low-pressure region on the suction side">
+            <figcaption>Figure 6. Rear wing, pressure coefficient.</figcaption>
+          </figure>
+          <figure class="cs-fig">
+            <img src="../images/projects/lmp1-cfd/lmp1-rearwing-cpt.webp" width="885" height="354" loading="lazy" decoding="async" alt="Total pressure coefficient around the rear wing showing a low-energy wake from the lower element and attached flow on the upper element">
+            <figcaption>Figure 7. Rear wing, total pressure coefficient.</figcaption>
+          </figure>
+        </div>
+        <div class="cs-fig-pair cs-fig-trio">
+          <figure class="cs-fig">
+            <img src="../images/projects/lmp1-cfd/lmp1-rw-slice-a.webp" width="924" height="642" loading="lazy" decoding="async" alt="Velocity vectors on a cross-section 0.5 metres ahead of the rear wing trailing edge, mostly uniform flow">
+            <figcaption>X = −0.5&nbsp;m</figcaption>
+          </figure>
+          <figure class="cs-fig">
+            <img src="../images/projects/lmp1-cfd/lmp1-rw-slice-b.webp" width="924" height="633" loading="lazy" decoding="async" alt="Velocity vectors at the rear wing trailing edge, showing a strong vortex near the endplate">
+            <figcaption>X = 0 (trailing edge)</figcaption>
+          </figure>
+          <figure class="cs-fig">
+            <img src="../images/projects/lmp1-cfd/lmp1-rw-slice-c.webp" width="915" height="630" loading="lazy" decoding="async" alt="Velocity vectors 0.5 metres behind the rear wing, with the vortex largely dissipated">
+            <figcaption>X = +0.5&nbsp;m</figcaption>
+          </figure>
+        </div>
+        <p class="cs-note">Figure 8. Velocity [m/s] and vectors on cross-sections through the rear-wing tip vortex.</p>
+
+        <h3>Diffuser, floor and strakes</h3>
+        <p>
+          The flat floor ran at negative pressure along its length, as expected. At the diffuser the boundary layer separated almost immediately: the diffuser angle is too steep. The small wing under the diffuser made things worse, taking flow away from the diffuser while producing more drag than downforce. Behind the car, where the flow from both the diffuser and the upper body has separated, pressure rises and adds drag.
+        </p>
+        <p>
+          Plotting pressure along the floor took a workaround. The intersection-curve tool failed on the two-element wings and its seeds leaked into the centreline ducts, so we isolated the chassis and offset the plane slightly from the symmetry plane.
+        </p>
+        <p>
+          Under the floor, the flow drifted towards the centreline instead of staying aligned with the strakes. Velocity iso-surfaces showed why: the rear tyre's turbulent wake is drawn into the diffuser, cutting its efficiency.
+        </p>
+        <figure class="cs-fig">
+          <img src="../images/projects/lmp1-cfd/lmp1-diffuser-cpt.webp" width="1200" height="317" loading="lazy" decoding="async" alt="Total pressure coefficient along the diffuser showing the flow losing energy shortly after the diffuser starts">
+          <figcaption>Figure 9. Total pressure coefficient in the diffuser. The flow loses energy almost as soon as the expansion starts.</figcaption>
+        </figure>
+        <figure class="cs-fig">
+          <img src="../images/projects/lmp1-cfd/lmp1-isosurf.webp" width="1200" height="522" loading="lazy" decoding="async" alt="Velocity iso-surfaces around the rear wheel showing the turbulent wake being drawn under the car into the diffuser">
+          <figcaption>Figure 10. Iso-surfaces under the floor. The rear tyre's wake is ingested by the diffuser.</figcaption>
+        </figure>
+
+        <h3>Aero balance</h3>
+        <p>
+          We located the centre of pressure with HyperMesh's integration tools, but the centre of gravity could only come from the bodywork-only CAD model, with no engine, driver or fuel. The balance comparison is therefore not meaningful. What the forces do show is a rear-biased load: almost all the downforce comes from the rear wing while the front wing lifts.
+        </p>
+      </section>
+
+      <!-- 05 -->
+      <section id="limitations">
+        <h2><span class="cs-num">05</span>Limitations and next steps</h2>
+        <ul class="cs-list">
+          <li><strong>Coarse mesh, no sensitivity study.</strong> Available computing power limited us to a relatively coarse mesh. A mesh-sensitivity study is the first thing to add, to find the element size beyond which the forces stop changing.</li>
+          <li><strong>Wall functions.</strong> A y+ around 30–39 suits a blunt-body study like this. If more detail were needed, for example on the separating wing elements, the next step would be to resolve the viscous sublayer with y+ near 1 on those surfaces.</li>
+          <li><strong>Surface groups.</strong> Separate groups for the diffuser, the flat floor and the upper chassis would have isolated their contributions. The single chassis group mixes downforce from the floor with lift and drag from the body.</li>
+          <li><strong>The model itself.</strong> The front-wing lift is the clearest sign that this model was designed for looks, not performance. The natural extension is to modify the geometry: a cascaded front wing, a shallower diffuser and reworked strakes, then rerun the comparison.</li>
+        </ul>
+      </section>
+
+      <!-- 06 -->
+      <section id="role">
+        <h2><span class="cs-num">06</span>Team and tools</h2>
+        <p>
+          A team project of three students for the Motorsport Aerodynamics module at EUSS, covering geometry preparation, set-up, meshing, convergence and post-processing.
+        </p>
+        <p>
+          <strong>Tools:</strong> Altair HyperMesh CFD, Altair AcuSolve, SolidWorks (model preparation and centre of gravity).
+        </p>
+        <p class="cs-sources">
+          Source: <em>Práctica 3: LMP1</em>, Aerodinámica de Competición, EUSS. All figures are reproduced from the report.
+        </p>
+      </section>
+
+      <nav class="cs-pager" aria-label="More projects">
+        <a href="aero-design.html"><span>Previous project</span>EM05 aerodynamic package design</a>
+        <a href="lmp2-understeer-kpi.html" class="cs-pager-next"><span>Next project</span>Understeer-angle KPI from LMP2 data</a>
+      </nav>
+    </article>
+
+    <footer id="contact">
+      <div class="footer-inner">
+        <div class="footer-main reveal">
+          <h2>Let's connect!</h2>
+        </div>
+        <ul class="footer-links reveal">
+          <li>
+            <a href="mailto:p.lacasta.sauret@gmail.com" class="footer-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 5h18v14H3z" stroke-linejoin="round"/><path d="m3 6 9 7 9-7" stroke-linejoin="round"/></svg>
+              p.lacasta.sauret@gmail.com
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/pau-lacasta" target="_blank" rel="noopener" class="footer-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="8" y1="10" x2="8" y2="17"/><circle cx="8" cy="6.5" r="0.75" fill="currentColor" stroke="none"/><path d="M12 17v-4.5a2 2 0 0 1 4 0V17" stroke-linecap="round"/></svg>
+              LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Pau Lacasta. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+
+  <button id="to-top" aria-label="Back to top">↑</button>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>
