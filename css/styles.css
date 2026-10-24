@@ -979,18 +979,6 @@ header.scrolled .nav-toggle-bar{
     margin: 3rem 0 1.25rem;
 }
 
-.projects-subheading:first-of-type{
-    margin-top: 0;
-}
-
-.projects-grid--featured{
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-}
-
-.projects-grid--featured .project-card img{
-    height: 220px;
-}
-
 .projects-grid--compact{
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.25rem;
@@ -1587,3 +1575,41 @@ header.scrolled .nav-toggle-bar{
     }
 }
 
+
+/* ---------- Project pages: text spans the full column and is justified ---------- */
+.project-detail p,
+.project-detail section p,
+.project-detail li,
+.project-detail figcaption,
+.project-detail .cs-lede,
+.project-detail .cs-list,
+.project-detail .cs-steps,
+.project-detail .cs-callout{
+    max-width: none;
+}
+
+.project-detail p,
+.project-detail section p,
+.project-detail li,
+.project-detail figcaption{
+    text-align: justify;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+/* Labels, key figures and text in narrow boxes stay left-aligned:
+   justified text in a narrow column opens wide gaps between words */
+.project-detail .cs-eyebrow,
+.project-detail .cs-toc p,
+.project-detail .cs-toc li,
+.project-detail .cs-chips li,
+.project-detail .project-year,
+.project-detail .cs-keyfig,
+.project-detail .cs-arch-col li,
+.project-detail .cs-arch-col p,
+.project-detail .cs-gallery figcaption,
+.project-detail .cs-fig-trio figcaption{
+    text-align: left;
+    -webkit-hyphens: manual;
+    hyphens: manual;
+}
