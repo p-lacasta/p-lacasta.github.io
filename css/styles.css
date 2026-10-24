@@ -1614,10 +1614,78 @@ header.scrolled .nav-toggle-bar{
     hyphens: manual;
 }
 
-/* ---------- Competitions: season video ---------- */
+/* ---------- Competitions: season video and team link ---------- */
+.season-row{
+    display: grid;
+    grid-template-columns: minmax(0, 320px) 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.team-card{
+    padding: 0.75rem;
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.team-card img{
+    display: block;
+    width: 100%;
+    border-radius: var(--radius-sm);
+}
+
+.team-link{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0.25rem 0.25rem;
+    padding: 0.65rem 1.3rem;
+    background: var(--color-accent-dark);
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-link svg{
+    width: 1.1em;
+    height: 1.1em;
+}
+
+.team-link:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(125,96,71,0.4);
+}
+
+.team-link:focus-visible{
+    outline: 2px solid var(--color-accent-dark);
+    outline-offset: 3px;
+}
+
+.visually-hidden{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce){
+    .team-link{
+        transition: none;
+    }
+
+    .team-link:hover{
+        transform: none;
+    }
+}
+
 .season-video{
-    max-width: 320px;
-    margin: 3rem auto 0;
+    margin: 0;
     padding: 0.75rem;
     background: var(--color-surface);
     border-radius: var(--radius-md);
@@ -1637,4 +1705,16 @@ header.scrolled .nav-toggle-bar{
     font-size: 0.85rem;
     color: var(--color-text-soft);
     text-align: center;
+}
+
+@media (max-width: 760px){
+    .season-row{
+        grid-template-columns: 1fr;
+    }
+
+    .season-video{
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
 }
